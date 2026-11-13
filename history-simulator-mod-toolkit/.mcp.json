@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "history-simulator-mod-toolkit": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/runtime/dist/mcp.js",
+        "--plugin-mode"
+      ],
+      "env": {
+        "MOD_TOOLKIT_DOCS_DIR": "${CLAUDE_PLUGIN_ROOT}/runtime/dist/assets/docs",
+        "MOD_TOOLKIT_VANILLA_DIR": "${CLAUDE_PLUGIN_ROOT}/runtime/dist/assets/default-vanilla",
+        "MOD_TOOLKIT_FIELD_DEFINITIONS_DIR": "${CLAUDE_PLUGIN_ROOT}/runtime/dist/assets/field-definitions"
+      }
+    },
+    "history-simulator-logs": {
+      "type": "http",
+      "url": "http://127.0.0.1:16270/"
+    }
+  }
+}

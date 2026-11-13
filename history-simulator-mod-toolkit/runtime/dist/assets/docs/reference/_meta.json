@@ -1,0 +1,33 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "参考手册导读"
+  },
+  {
+    "type": "file",
+    "name": "file-structure",
+    "label": "第 19 章：Mod 文件结构"
+  },
+  {
+    "type": "dir",
+    "name": "tables",
+    "label": "第 20 章：27 张数据表"
+  },
+  { "type": "dir", "name": "prompts", "label": "Prompt 逐名参考（契约生成）", "collapsible": true, "collapsed": true },
+  {
+    "type": "file",
+    "name": "limits",
+    "label": "第 21 章：文件与格式限制"
+  },
+  {
+    "type": "file",
+    "name": "troubleshooting",
+    "label": "第 22 章：错误排查"
+  },
+  {
+    "type": "file",
+    "name": "error-codes",
+    "label": "第 23 章：错误码总目录"
+  }
+]

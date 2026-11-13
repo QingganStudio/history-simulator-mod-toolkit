@@ -1,0 +1,16 @@
+# 统一行尾为 LF：本仓库内容由主仓库构建产物同步（构建侧强制 LF），
+# eol=lf 覆盖 Windows core.autocrlf 的检出转换，避免同步后整仓假性 modified 与告警。
+* text=auto eol=lf
+
+# 二进制资源显式排除，防止 text=auto 误判
+*.ico binary
+*.webp binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.mp3 binary
+*.mp4 binary
+*.woff binary
+*.woff2 binary
+*.ttf binary

@@ -1,0 +1,7 @@
+[
+  { "type": "file", "name": "index", "label": "本篇导读" },
+  { "type": "file", "name": "save-and-preflight", "label": "第 15 章：保存与内容预检" },
+  { "type": "file", "name": "preview", "label": "第 16 章：预览与本地调试" },
+  { "type": "file", "name": "local-testing", "label": "第 17 章：本地导入和客户端测试" },
+  { "type": "file", "name": "workshop", "label": "第 18 章：发布到 Workshop" }
+]

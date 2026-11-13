@@ -1,0 +1,83 @@
+{
+  "version": "1.0.0",
+  "commands": [
+    {
+      "command": "relief_fund",
+      "command_name": "赈灾拨款",
+      "unit": "两",
+      "valueType": "number",
+      "defaultValue": 0,
+      "extra": {
+        "min": 0,
+        "step": 100
+      },
+      "scope": "mainland"
+    },
+    {
+      "command": "irrigation",
+      "command_name": "兴修水利拨款",
+      "unit": "两",
+      "valueType": "number",
+      "defaultValue": 0,
+      "extra": {
+        "min": 0,
+        "step": 100
+      },
+      "scope": "mainland"
+    },
+    {
+      "command": "road_maintenance",
+      "command_name": "维护道路拨款",
+      "unit": "两",
+      "valueType": "number",
+      "defaultValue": 0,
+      "extra": {
+        "min": 0,
+        "step": 100
+      },
+      "scope": "mainland"
+    },
+    {
+      "command": "appease_refugees",
+      "command_name": "安抚流民拨款",
+      "unit": "两",
+      "valueType": "number",
+      "defaultValue": 0,
+      "extra": {
+        "min": 0,
+        "step": 100
+      },
+      "scope": "mainland"
+    },
+    {
+      "command": "fortify_city",
+      "command_name": "加固城防拨款",
+      "unit": "两",
+      "valueType": "number",
+      "defaultValue": 0,
+      "extra": {
+        "min": 0,
+        "step": 100
+      },
+      "scope": "mainland"
+    },
+    {
+      "command": "martial_law",
+      "command_name": "执行戒严",
+      "unit": "",
+      "valueType": "boolean",
+      "defaultValue": false,
+      "scope": "mainland"
+    },
+    {
+      "command": "occupy",
+      "command_name": "完全占领该省",
+      "unit": "",
+      "valueType": "boolean",
+      "defaultValue": false,
+      "ai_description": "完全占领{target_name}，并根据历史事件表，判断能否使该省份的归属权改为大明",
+      "display_description": "完全占领{target_name}",
+      "scope": "non-mainland"
+    }
+  ]
+}

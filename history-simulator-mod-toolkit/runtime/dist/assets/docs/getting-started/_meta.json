@@ -1,0 +1,6 @@
+[
+  { "type": "file", "name": "index", "label": "本篇导读" },
+  { "type": "file", "name": "understand-mods", "label": "第 1 章：认识 Mod 制作" },
+  { "type": "file", "name": "setup", "label": "第 2 章：准备制作环境" },
+  { "type": "file", "name": "first-mod", "label": "第 3 章：完成第一个 Mod" }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "总览与 ScenarioMeta 键语义"
+  },
+  {
+    "type": "section-header",
+    "label": "逻辑名（按领域分组）"
+  },
+  {
+    "type": "file",
+    "name": "ScenarioMeta",
+    "label": "ScenarioMeta"
+  },
+  {
+    "type": "file",
+    "name": "AgentLoop-Simulate-System",
+    "label": "AgentLoop-Simulate-System"
+  },
+  {
+    "type": "file",
+    "name": "AgentLoop-Simulate-Step1",
+    "label": "AgentLoop-Simulate-Step1"
+  },
+  {
+    "type": "file",
+    "name": "AgentLoop-Simulate-Step2",
+    "label": "AgentLoop-Simulate-Step2"
+  },
+  {
+    "type": "file",
+    "name": "AgentLoop-Simulate-Step3",
+    "label": "AgentLoop-Simulate-Step3"
+  },
+  {
+    "type": "file",
+    "name": "CourtDiscussionPrompt",
+    "label": "CourtDiscussionPrompt"
+  },
+  {
+    "type": "file",
+    "name": "NPCUnifiedPrompt",
+    "label": "NPCUnifiedPrompt"
+  },
+  {
+    "type": "file",
+    "name": "TaskAgent",
+    "label": "TaskAgent"
+  },
+  {
+    "type": "file",
+    "name": "OutputGenerationAgent",
+    "label": "OutputGenerationAgent"
+  },
+  {
+    "type": "file",
+    "name": "EdictRefineAgent",
+    "label": "EdictRefineAgent"
+  },
+  {
+    "type": "file",
+    "name": "EndGameAgent",
+    "label": "EndGameAgent"
+  },
+  {
+    "type": "file",
+    "name": "EventManagementAgent",
+    "label": "EventManagementAgent"
+  },
+  {
+    "type": "file",
+    "name": "db_info",
+    "label": "db_info"
+  },
+  {
+    "type": "file",
+    "name": "EasyModeContent",
+    "label": "EasyModeContent"
+  }
+]

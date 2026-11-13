@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "history-simulator-mod-toolkit",
+  "version": "1.7.0",
+  "description": "历史模拟器 Mod 制作工具：查询剧本资料、创建和校验 Mod。当前内置崇祯剧本数据。",
+  "author": {
+    "name": "青干工作室"
+  },
+  "license": "MIT",
+  "keywords": [
+    "history-simulator",
+    "mod",
+    "game-modding",
+    "mcp",
+    "model-context-protocol",
+    "agent-skills"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "History Simulator Mod Toolkit"
+      }
+    }
+  }
+}

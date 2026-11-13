@@ -1,0 +1,29 @@
+{
+  "name": "history-simulator-mod-toolkit",
+  "version": "1.7.0",
+  "description": "历史模拟器 Mod 制作工具：查询剧本资料、创建和校验 Mod。当前内置崇祯剧本数据。",
+  "author": {
+    "name": "青干工作室"
+  },
+  "keywords": [
+    "history-simulator",
+    "mod",
+    "game-modding",
+    "mcp",
+    "model-context-protocol",
+    "agent-skills"
+  ],
+  "skills": "./skills",
+  "mcpServers": {
+    "history-simulator-mod-toolkit": {
+      "command": "node",
+      "args": [
+        "./runtime/dist/mcp.js",
+        "--plugin-mode"
+      ]
+    },
+    "history-simulator-logs": {
+      "url": "http://127.0.0.1:16270/"
+    }
+  }
+}

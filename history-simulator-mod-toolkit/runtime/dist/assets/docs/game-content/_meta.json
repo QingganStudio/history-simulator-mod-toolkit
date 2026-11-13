@@ -1,0 +1,24 @@
+[
+  { "type": "file", "name": "index", "label": "本篇导读" },
+  {
+    "type": "dir",
+    "name": "scenario-data",
+    "label": "第 7 章：基础剧本数据",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "events-and-decisions",
+    "label": "第 8 章：事件与决议",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "perk-tree",
+    "label": "第 9 章：国策树",
+    "collapsible": true,
+    "collapsed": false
+  }
+]

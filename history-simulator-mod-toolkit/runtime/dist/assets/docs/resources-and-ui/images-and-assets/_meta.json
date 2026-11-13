@@ -1,0 +1,8 @@
+[
+  { "type": "file", "name": "editor-workflows", "label": "11.1 资源编辑器与三种工作流" },
+  { "type": "file", "name": "registered-images", "label": "11.2 注册图片的目录与命名规则" },
+  { "type": "file", "name": "convention-overrides", "label": "11.3 client-assets 目录约定覆盖" },
+  { "type": "file", "name": "explicit-mappings", "label": "11.4 Config/assets.json 显式映射" },
+  { "type": "file", "name": "formats-and-limits", "label": "11.5 格式、限制、安全检查与回退" },
+  { "type": "file", "name": "validation", "label": "11.6 分环境验证与故障排查" }
+]

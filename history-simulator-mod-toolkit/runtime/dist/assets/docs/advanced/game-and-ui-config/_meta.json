@@ -1,0 +1,13 @@
+[
+  { "type": "file", "name": "pg-table-mapping", "label": "13.1 PG 表名映射" },
+  { "type": "file", "name": "minister-positions", "label": "13.2 官职编辑器" },
+  { "type": "file", "name": "global-config", "label": "13.3 全局配置" },
+  { "type": "file", "name": "field-metadata", "label": "13.4 字段元数据编辑器" },
+  { "type": "file", "name": "page-operation-guides", "label": "13.5 页面操作指引" },
+  { "type": "file", "name": "province-commands", "label": "13.6 省份指令编辑器" },
+  { "type": "file", "name": "calendar-config", "label": "13.7 历法配置" },
+  { "type": "file", "name": "key-events", "label": "13.8 关键事件" },
+  { "type": "file", "name": "map-behavior-config", "label": "13.9 地图行为" },
+  { "type": "file", "name": "minister-chat-presets", "label": "13.10 大臣聊天预设" },
+  { "type": "file", "name": "court-chat-quick-messages", "label": "13.11 廷议快捷语" }
+]

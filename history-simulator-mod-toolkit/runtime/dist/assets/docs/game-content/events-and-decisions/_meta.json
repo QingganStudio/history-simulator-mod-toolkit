@@ -1,0 +1,8 @@
+[
+  { "type": "file", "name": "event-types-and-keys", "label": "8.1 六类事件与标识命名空间" },
+  { "type": "file", "name": "conditions", "label": "8.2 条件编辑器与判断规则" },
+  { "type": "file", "name": "options-and-effects", "label": "8.3 选项、效果与后续事件" },
+  { "type": "file", "name": "random-event-chains", "label": "8.4 链式随机事件编辑器" },
+  { "type": "file", "name": "decisions-and-super-events", "label": "8.5 决议、重复策略与超事件快照" },
+  { "type": "file", "name": "validation", "label": "8.6 Preview 与真实场景验证" }
+]

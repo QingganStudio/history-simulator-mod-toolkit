@@ -1,0 +1,86 @@
+[
+  {
+    "group_name": "内阁大学士",
+    "group_code": "grand_secretariat",
+    "positions": [
+      {
+        "key": "grand_secretary_zhongji",
+        "name": "中极殿大学士",
+        "rank": "正一品",
+        "official": null
+      },
+      {
+        "key": "grand_secretary_jianji",
+        "name": "建极殿大学士",
+        "rank": "正一品",
+        "official": null
+      },
+      {
+        "key": "grand_secretary_wenhua",
+        "name": "文华殿大学士",
+        "rank": "正五品",
+        "official": null
+      },
+      {
+        "key": "grand_secretary_wuying",
+        "name": "武英殿大学士",
+        "rank": "正五品",
+        "official": null
+      },
+      {
+        "key": "grand_secretary_wenyuan",
+        "name": "文渊阁大学士",
+        "rank": "正五品",
+        "official": null
+      },
+      {
+        "key": "grand_secretary_dongge",
+        "name": "东阁大学士",
+        "rank": "正五品",
+        "official": null
+      }
+    ]
+  },
+  {
+    "group_name": "六部尚书",
+    "group_code": "six_ministries",
+    "positions": [
+      {
+        "key": "minister_personnel",
+        "name": "吏部尚书",
+        "rank": "正二品",
+        "official": null
+      },
+      {
+        "key": "minister_war",
+        "name": "兵部尚书",
+        "rank": "正二品",
+        "official": null
+      },
+      {
+        "key": "minister_revenue",
+        "name": "户部尚书",
+        "rank": "正二品",
+        "official": null
+      },
+      {
+        "key": "minister_rites",
+        "name": "礼部尚书",
+        "rank": "正二品",
+        "official": null
+      },
+      {
+        "key": "minister_justice",
+        "name": "刑部尚书",
+        "rank": "正二品",
+        "official": null
+      },
+      {
+        "key": "minister_works",
+        "name": "工部尚书",
+        "rank": "正二品",
+        "official": null
+      }
+    ]
+  }
+]

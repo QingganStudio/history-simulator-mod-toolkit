@@ -1,0 +1,185 @@
+{
+  "version": 1,
+  "noDataColor": "rgba(150, 150, 150, 1)",
+  "style": {
+    "borderColor": "rgba(0, 0, 0, 0.2)",
+    "normal": {
+      "fillOpacity": 0.3,
+      "weight": 1
+    },
+    "hover": {
+      "fillOpacity": 0.5,
+      "weight": 3
+    }
+  },
+  "views": [
+    {
+      "id": "default",
+      "label": "标准视图",
+      "rule": {
+        "kind": "category",
+        "selector": "regime_code_name",
+        "colors": {
+          "2001_ming": "#E49921",
+          "2002_qing": "#A08E73",
+          "2003_chahaer": "#7C7E5D",
+          "2004_keerqin": "#A28681",
+          "2005_monan": "#A28681",
+          "2006_kaerka": "#5F6D6D",
+          "2007_heshuote": "#A28681",
+          "2008_tumote": "#5F6D6D",
+          "2009_yeerqiang": "#7C7E5D",
+          "2010_korea": "#7C7E5D",
+          "2011_japan": "#A08E73",
+          "2012_li": "#A08E73",
+          "2013_helan": "#A08E73",
+          "2014_qiyi": "#C20000",
+          "2015_pirates": "#3F929D",
+          "2016_putaoya": "#A7844C",
+          "2017_shean": "#8F4A77",
+          "2018_spanish": "#A08E73",
+          "2019_mughal": "#7C7E5D",
+          "2020_oirats": "#5F6D6D",
+          "2021_deccan": "#A28681",
+          "2022_lanxang": "#7C7E5D",
+          "2023_khmer": "#5F6D6D",
+          "2024_ayutthaya": "#A28681",
+          "2025_taungoo": "#A4957F",
+          "2026_johor": "#7C7E5D",
+          "2027_brunei": "#A28681",
+          "2028_bukhara": "#5F6D6D",
+          "2029_khiva": "#7C7E5D",
+          "2030_kazakh": "#A28681",
+          "2031_crimean": "#5F6D6D",
+          "2032_polishlithuanian": "#7C7E5D",
+          "2033_russian": "#A08E73",
+          "2034_caucasus": "#7C7E5D",
+          "2035_arab": "#5F6D6D",
+          "2036_persia": "#A28681",
+          "2037_ottoman": "#A08E73",
+          "2038_africa": "#A28681",
+          "2039_wild": "#5F6D6D"
+        },
+        "fallbackColor": "rgba(120, 120, 120, 1)"
+      }
+    },
+    {
+      "id": "disaster_level",
+      "label": "灾情视图",
+      "guard": {
+        "selector": "is_main",
+        "equals": true
+      },
+      "rule": {
+        "kind": "category",
+        "selector": "disaster_level",
+        "colors": {
+          "正常": "rgba(135, 153, 0, 1)",
+          "轻微": "rgba(153, 77, 0, 1)",
+          "中等": "rgba(153, 0, 3, 1)",
+          "严重": "rgba(110, 0, 153, 1)"
+        }
+      }
+    },
+    {
+      "id": "public_sentiment",
+      "label": "民心视图",
+      "guard": {
+        "selector": "is_main",
+        "equals": true
+      },
+      "rule": {
+        "kind": "range",
+        "selector": "public_sentiment",
+        "ranges": [
+          { "lt": 20, "color": "#990003" },
+          { "gte": 20, "lt": 40, "color": "#994D00" },
+          { "gte": 40, "lt": 60, "color": "#E4B53D" },
+          { "gte": 60, "lt": 80, "color": "#879900" },
+          { "gte": 80, "color": "#00990A" }
+        ]
+      }
+    },
+    {
+      "id": "rebellion_risk",
+      "label": "动乱视图",
+      "guard": {
+        "selector": "is_main",
+        "equals": true
+      },
+      "rule": {
+        "kind": "range",
+        "selector": "rebellion_risk",
+        "ranges": [
+          { "lt": 20, "color": "#00990A" },
+          { "gte": 20, "lt": 40, "color": "#879900" },
+          { "gte": 40, "lt": 60, "color": "#E4B53D" },
+          { "gte": 60, "lt": 80, "color": "#994D00" },
+          { "gte": 80, "color": "#990003" }
+        ]
+      }
+    },
+    {
+      "id": "defence_level",
+      "label": "城防视图",
+      "guard": {
+        "selector": "is_main",
+        "equals": true
+      },
+      "rule": {
+        "kind": "range",
+        "selector": "defence_level",
+        "ranges": [
+          { "lte": 1, "color": "rgba(143, 199, 238, 1)" },
+          { "gt": 1, "lte": 2, "color": "rgba(92, 172, 229, 1)" },
+          { "gt": 2, "lte": 3, "color": "rgba(44, 146, 219, 1)" },
+          { "gt": 3, "lte": 4, "color": "rgba(0, 128, 219, 1)" },
+          { "gt": 4, "lte": 5, "color": "rgba(0, 110, 219, 1)" },
+          { "gt": 5, "lte": 6, "color": "rgba(0, 73, 219, 1)" },
+          { "gt": 6, "lte": 7, "color": "rgba(0, 37, 219, 1)" },
+          { "gt": 7, "lte": 8, "color": "rgba(0, 0, 219, 1)" },
+          { "gt": 8, "lte": 9, "color": "rgba(37, 0, 219, 1)" },
+          { "gt": 9, "color": "rgba(73, 0, 219, 1)" }
+        ]
+      }
+    },
+    {
+      "id": "tax_efficiency_rate",
+      "label": "税收完成率视图",
+      "guard": {
+        "selector": "is_main",
+        "equals": true
+      },
+      "rule": {
+        "kind": "range",
+        "selector": "tax_efficiency_rate",
+        "ranges": [
+          { "lt": 0.2, "color": "#990003" },
+          { "gte": 0.2, "lt": 0.4, "color": "#994D00" },
+          { "gte": 0.4, "lt": 0.6, "color": "#E4B53D" },
+          { "gte": 0.6, "lt": 0.8, "color": "#879900" },
+          { "gte": 0.8, "color": "#00990A" }
+        ]
+      }
+    },
+    {
+      "id": "tax_total",
+      "label": "实际赋税视图",
+      "guard": {
+        "selector": "is_main",
+        "equals": true
+      },
+      "rule": {
+        "kind": "range",
+        "selector": "tax_total",
+        "ranges": [
+          { "lt": 0, "color": "#E4B53D" },
+          { "gte": 0, "lt": 500000, "color": "#879900" },
+          { "gte": 500000, "lt": 1000000, "color": "#00990A" },
+          { "gte": 1000000, "lt": 1500000, "color": "#007D99" },
+          { "gte": 1500000, "color": "#004D99" }
+        ]
+      }
+    }
+  ]
+}

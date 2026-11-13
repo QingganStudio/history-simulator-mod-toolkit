@@ -1,0 +1,8 @@
+[
+  { "type": "file", "name": "geojson-contract", "label": "10.1 地图坐标系与 GeoJSON 契约" },
+  { "type": "file", "name": "editor-workflow", "label": "10.2 地图编辑器操作与保存" },
+  { "type": "file", "name": "features-and-bindings", "label": "10.3 地图要素类型与业务绑定" },
+  { "type": "file", "name": "province-integration", "label": "10.4 省份数据、展示资源与指令协同" },
+  { "type": "file", "name": "runtime-validation", "label": "10.5 Preview、运行时回退与排错" },
+  { "type": "file", "name": "view-colors", "label": "10.6 地块视图与势力颜色" }
+]

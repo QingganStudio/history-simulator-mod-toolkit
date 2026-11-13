@@ -1,0 +1,47 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "首页"
+  },
+  {
+    "type": "dir",
+    "name": "getting-started",
+    "label": "第一篇：新手入门"
+  },
+  {
+    "type": "dir",
+    "name": "mod-maker",
+    "label": "第二篇：掌握 Mod Maker"
+  },
+  {
+    "type": "dir",
+    "name": "game-content",
+    "label": "第三篇：制作游戏内容"
+  },
+  {
+    "type": "dir",
+    "name": "resources-and-ui",
+    "label": "第四篇：地图、资源与界面"
+  },
+  {
+    "type": "dir",
+    "name": "advanced",
+    "label": "第五篇：高级配置"
+  },
+  {
+    "type": "dir",
+    "name": "validate-and-publish",
+    "label": "第六篇：保存、验证与发布"
+  },
+  {
+    "type": "dir",
+    "name": "reference",
+    "label": "第七篇：完整参考手册"
+  },
+  {
+    "type": "dir",
+    "name": "tools-and-agents",
+    "label": "第八篇：工具链与 Agent 工作流"
+  }
+]

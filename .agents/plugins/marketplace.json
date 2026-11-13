@@ -1,0 +1,19 @@
+{
+  "name": "history-simulator",
+  "interface": {
+    "displayName": "History Simulator Mod Toolkit"
+  },
+  "plugins": [
+    {
+      "name": "history-simulator-mod-toolkit",
+      "source": {
+        "source": "local",
+        "path": "./history-simulator-mod-toolkit"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      }
+    }
+  ]
+}

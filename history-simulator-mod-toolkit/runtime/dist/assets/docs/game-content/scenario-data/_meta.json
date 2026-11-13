@@ -1,0 +1,8 @@
+[
+  { "type": "file", "name": "dependencies-and-identifiers", "label": "7.1 数据依赖顺序与稳定标识" },
+  { "type": "file", "name": "political-foundations", "label": "7.2 政权、党派与社会阶层" },
+  { "type": "file", "name": "ministers-and-recommendations", "label": "7.3 大臣、官职与举荐" },
+  { "type": "file", "name": "provinces-and-economy", "label": "7.4 省份、土地、建筑与财政" },
+  { "type": "file", "name": "military-data", "label": "7.5 装备、兵种、船只与军队" },
+  { "type": "file", "name": "opening-data", "label": "7.6 开局属性、任务、预测与特殊推演" }
+]

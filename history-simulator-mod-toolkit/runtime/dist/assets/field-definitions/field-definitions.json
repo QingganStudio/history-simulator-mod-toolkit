@@ -1,0 +1,2520 @@
+{
+  "schemas": {
+    "RegimeResponse": {
+      "fields": {
+        "code_name": {
+          "label": "势力键值",
+          "description": "代表该势力的唯一编号",
+          "type": "string"
+        },
+        "name": {
+          "label": "势力名称",
+          "description": "该势力的名称",
+          "type": "string"
+        },
+        "current_ruler": {
+          "label": "统治者",
+          "description": "该势力的最高统治者",
+          "type": "string"
+        },
+        "corruption": {
+          "label": "腐败度",
+          "description": "该势力官僚系统的腐败程度；腐败越高，就会有越多的财政损失",
+          "type": "integer"
+        },
+        "prestige": {
+          "label": "统治者权威",
+          "description": "统治者的个人威望，威望值越高，政令执行的越顺利：\n0-20：官员大多阳奉阴违，皇帝命令难以执行\n20-40：政令能得到推行，但仍会受到阻力\n40-60：皇帝的大部分政令能得到贯彻，但明显有问题的指令会被官员指出并请求三思而行\n60-80：官员大多不敢忤逆皇帝的意愿\n80-100：国家上下噤若寒蝉，惟皇帝命令是从",
+          "type": "integer"
+        },
+        "currency_policy": {
+          "label": "通货供应",
+          "description": "市场上的通货供应量，通货供应越高，百姓的粮食就能兑换更多银钱，就能上缴更多赋税。\n缺乏：赋税收入x0.6\n不足：赋税收入x0.8\n正常：赋税收入x1.0\n流通：赋税收入x1.1\n充裕：赋税收入x1.15",
+          "type": "integer"
+        },
+        "id": {
+          "label": "势力ID",
+          "description": "势力ID",
+          "type": "integer"
+        },
+        "currency_status": {
+          "label": "通货供应",
+          "description": "市场上的通货供应量，通货供应越高，百姓的粮食就能兑换更多银钱，就能上缴更多赋税",
+          "type": "string"
+        },
+        "is_main": {
+          "label": "是否主势力",
+          "description": "当前MOD下的主势力",
+          "type": "boolean"
+        },
+        "province_list": {
+          "label": "控制地块键值",
+          "description": "该势力治下控制的省份",
+          "type": "string"
+        }
+      }
+    },
+    "PartyResponse": {
+      "fields": {
+        "code_name": {
+          "label": "党派键值",
+          "description": "该党派的唯一代码",
+          "type": "string"
+        },
+        "name": {
+          "label": "党派名称",
+          "description": "该党派的名称",
+          "type": "string"
+        },
+        "satisfaction": {
+          "label": "党派满意度",
+          "description": "该党派整体对皇帝和当前现状的满意度。满意度越高，他们越可能自发支持您的政令，反之将会阻挠您的命令",
+          "type": "integer"
+        },
+        "influence": {
+          "label": "党派影响力",
+          "description": "该党派在帝国中的影响力，指代其掌握的帝国各行业命脉和盘根错节的利益网络。如果阶层的影响力较高，他们就能根据满意度和叛乱风险进行卓有成效的行动；如果影响力较低，无论他们的满意度和叛乱风险如何，都掀不起什么风浪。",
+          "type": "integer"
+        },
+        "rebellion_risk": {
+          "label": "叛乱风险",
+          "description": "该党派的叛乱风险。叛乱风险越高，他们越可能造反，具体到党派上，东林党可能会勾结江南士绅甚至西洋人违抗朝廷；而阉党则可能会秘密谋害皇帝",
+          "type": "integer"
+        },
+        "description": {
+          "label": "描述",
+          "description": "对该党派的描述",
+          "type": "string"
+        },
+        "id": {
+          "label": "党派ID",
+          "description": "党派ID",
+          "type": "integer"
+        }
+      }
+    },
+    "MinisterResources": {
+      "fields": {
+        "chat_url": {
+          "label": "聊天图片URL",
+          "description": "大臣的聊天图片URL",
+          "type": "string"
+        },
+        "face_url": {
+          "label": "头像URL",
+          "description": "大臣的头像URL",
+          "type": "string"
+        },
+        "card_url": {
+          "label": "立绘卡片图片URL",
+          "description": "大臣的立绘卡片图片URL",
+          "type": "string"
+        },
+        "discuss_url": {
+          "label": "廷议讨论图片URL",
+          "description": "大臣的廷议讨论图片URL",
+          "type": "string"
+        }
+      }
+    },
+    "MinisterResponse": {
+      "fields": {
+        "party_id": {
+          "label": "党派键值",
+          "description": "大臣所属的党派",
+          "type": "integer"
+        },
+        "code_name": {
+          "label": "大臣键值",
+          "description": "大臣的唯一代码",
+          "type": "string"
+        },
+        "name": {
+          "label": "姓名",
+          "description": "大臣的姓名",
+          "type": "string"
+        },
+        "position": {
+          "label": "官职",
+          "description": "大臣的官职\n(可以有多个）",
+          "type": "array"
+        },
+        "stance": {
+          "label": "政治立场",
+          "description": "大臣所持的政治立场。\n利己派： 无论改革与否，只追求一己私利\n皇权派：追求加强皇权，遵从皇帝的决策\n保守派：反对过激的改革，力求维持现状\n改革派：主张用新政和新技术挽救大明",
+          "type": "string"
+        },
+        "influence": {
+          "label": "影响力",
+          "description": "大臣在朝野中的影响力",
+          "type": "integer"
+        },
+        "description": {
+          "label": "简介",
+          "description": "大臣生平介绍",
+          "type": "string"
+        },
+        "resources": {
+          "label": "大臣图片资源",
+          "description": "大臣的图片资源",
+          "type": "object",
+          "ref": "MinisterResources"
+        },
+        "gender": {
+          "label": "性别",
+          "description": "大臣的性别",
+          "type": "string"
+        },
+        "id": {
+          "label": "大臣ID",
+          "description": "大臣ID",
+          "type": "integer"
+        },
+        "prompt": {
+          "label": "提示词",
+          "description": "为Agent扮演大臣的提示词",
+          "type": "string"
+        },
+        "is_visible": {
+          "label": "是否可见",
+          "description": "是否在游戏中显示该大臣；必填布尔值。",
+          "type": "string"
+        },
+        "is_alive": {
+          "label": "是否存活",
+          "description": "True为存活False为死亡",
+          "type": "string"
+        },
+        "is_system": {
+          "label": "是否玩家创建",
+          "description": "True表示为玩家下令后自动创建的；False表示预先配置的",
+          "type": "string"
+        }
+      }
+    },
+    "ProvinceResponse": {
+      "fields": {
+        "regime_id": {
+          "label": "所属势力键值",
+          "description": "该省份隶属于哪一个势力",
+          "type": "integer"
+        },
+        "code_name": {
+          "label": "地块键值",
+          "description": "省份的唯一定位代码",
+          "type": "string"
+        },
+        "name": {
+          "label": "地块名称",
+          "description": "省份的官方名称",
+          "type": "string"
+        },
+        "population": {
+          "label": "人口",
+          "description": "该省份登记在册的居民总数（不包含流民）",
+          "type": "integer"
+        },
+        "public_sentiment": {
+          "label": "民心",
+          "description": "该省份的民众对现状的满意度，该数字越大，政令在该地区执行就越顺利",
+          "type": "integer"
+        },
+        "rebellion_risk": {
+          "label": "动乱",
+          "description": "该省份的动乱程度，该数字越大，就越有可能生成叛军，并破坏生产",
+          "type": "integer"
+        },
+        "yield_mu": {
+          "label": "粮食亩产（石/季度）",
+          "description": "该省份每亩每季度能够生产多少石粮食",
+          "type": "number"
+        },
+        "other_tax": {
+          "label": "其它税收（两）",
+          "description": "其他无法归类的税收",
+          "type": "integer"
+        },
+        "tax_coef": {
+          "label": "税收倍率",
+          "description": "依据朝廷政策为诸省份设定的或减免或加赋的倍率（0.5为正常）",
+          "type": "number"
+        },
+        "disaster_status": {
+          "label": "当前灾害",
+          "description": "该省份目前的灾情种类",
+          "type": "string"
+        },
+        "disaster_level": {
+          "label": "灾害严重等级",
+          "description": "该省份当前灾情的严重等级",
+          "type": "string"
+        },
+        "defence_level": {
+          "label": "城防等级",
+          "description": "该地区城池和要塞的坚固程度，最高为10.没有足够的火炮和步兵将无法夺取高城防的地块",
+          "type": "integer"
+        },
+        "tax_efficiency_rate": {
+          "label": "税收完成率",
+          "description": "对税收计划的完成率，反映了中央政府对当地的行政掌控力。当税收完成率为50%时，说明应缴的100两税收只收缴了50两",
+          "type": "number"
+        },
+        "description": {
+          "label": "描述",
+          "description": "地区的解释",
+          "type": "string"
+        },
+        "id": {
+          "label": "省份ID",
+          "description": "省份ID",
+          "type": "integer"
+        },
+        "has_full_data": {
+          "label": "信息是否完整",
+          "description": "该省份的信息是否完整",
+          "type": "boolean"
+        },
+        "tax_rate": {
+          "label": "税收倍率",
+          "description": "依据朝廷政策为诸省份设定的或减免或加赋的倍率（0.5为正常）",
+          "type": "string"
+        },
+        "tax_efficiency": {
+          "label": "税收完成率",
+          "description": "对税收计划的完成率，反映了中央政府对当地的行政掌控力。当税收完成率为50%时，说明应缴的100两税收只收缴了50两",
+          "type": "string"
+        },
+        "is_coastal": {
+          "label": "是否沿海",
+          "description": "不沿海的省份不会发生海啸，也无法驻扎海军",
+          "type": "string"
+        }
+      }
+    },
+    "MinisterWithPartyResponse": {
+      "fields": {
+        "code_name": {
+          "label": "大臣键值",
+          "description": "大臣的唯一代码",
+          "type": "string"
+        },
+        "name": {
+          "label": "姓名",
+          "description": "大臣的姓名",
+          "type": "string"
+        },
+        "position": {
+          "label": "官职",
+          "description": "大臣的官职\n(可以有多个）",
+          "type": "array"
+        },
+        "stance": {
+          "label": "政治立场",
+          "description": "大臣所持的政治立场。\n利己派： 无论改革与否，只追求一己私利\n皇权派：追求加强皇权，遵从皇帝的决策\n保守派：反对过激的改革，力求维持现状\n改革派：主张用新政和新技术挽救大明",
+          "type": "string"
+        },
+        "influence": {
+          "label": "影响力",
+          "description": "大臣在朝野中的影响力",
+          "type": "integer"
+        },
+        "description": {
+          "label": "简介",
+          "description": "大臣生平介绍",
+          "type": "string"
+        },
+        "resources": {
+          "label": "大臣图片资源",
+          "description": "大臣的图片资源",
+          "type": "object",
+          "ref": "MinisterResources"
+        },
+        "gender": {
+          "label": "性别",
+          "description": "大臣的性别",
+          "type": "string"
+        },
+        "id": {
+          "label": "大臣ID",
+          "description": "大臣ID",
+          "type": "integer"
+        },
+        "party": {
+          "label": "党派",
+          "description": "所属的党派信息",
+          "type": "object",
+          "ref": "PartyResponse"
+        },
+        "governed_provinces": {
+          "label": "总督的省份",
+          "description": "大臣总督治下的省份",
+          "type": "array",
+          "ref": "ProvinceResponse"
+        },
+        "party_id": {
+          "label": "党派键值",
+          "description": "大臣所属的党派",
+          "type": "string"
+        },
+        "prompt": {
+          "label": "提示词",
+          "description": "为Agent扮演大臣的提示词",
+          "type": "string"
+        },
+        "is_visible": {
+          "label": "是否可见",
+          "description": "是否在游戏中显示该大臣；必填布尔值。",
+          "type": "string"
+        },
+        "is_alive": {
+          "label": "是否存活",
+          "description": "True为存活False为死亡",
+          "type": "string"
+        },
+        "is_system": {
+          "label": "是否玩家创建",
+          "description": "True表示为玩家下令后自动创建的；False表示预先配置的",
+          "type": "string"
+        }
+      }
+    },
+    "LandTaxConfigResponse": {
+      "fields": {
+        "code_name": {
+          "label": "主键",
+          "description": "田税唯一代码",
+          "type": "string"
+        },
+        "name": {
+          "label": "田亩种类",
+          "description": "不同田亩的基础税费是不同的",
+          "type": "string"
+        },
+        "tax_base": {
+          "label": "基本田赋（两/亩/季度）",
+          "description": "最基础的粮食税及实物税折银后所征，明朝开国时承诺“永不加赋”。",
+          "type": "number"
+        },
+        "tax_liao": {
+          "label": "辽饷（两/亩/季度）",
+          "description": "朝廷为应对后金威胁所加征的税费，主要用于辽东军需",
+          "type": "number"
+        },
+        "tax_old": {
+          "label": "旧饷（两/亩/季度）",
+          "description": "虽称永不加赋，但此后根据财政需要又另起的各类税费名目。",
+          "type": "number"
+        },
+        "tax_new": {
+          "label": "新饷（两/亩/季度）",
+          "description": "崇祯朝以来所新加派的赋税",
+          "type": "number"
+        },
+        "is_royal": {
+          "label": "是否皇室",
+          "description": "True=收入归内帑，False=收入归国库",
+          "type": "boolean"
+        },
+        "id": {
+          "label": "田税ID",
+          "description": "田税ID",
+          "type": "integer"
+        },
+        "total_tax": {
+          "label": "田亩总赋税（两/亩/季度）",
+          "description": "该种田亩每亩被征收的总赋税",
+          "type": "number"
+        }
+      }
+    },
+    "LandDetailResponse": {
+      "fields": {
+        "code_name": {
+          "label": "主键",
+          "description": "田税唯一代码",
+          "type": "string"
+        },
+        "name": {
+          "label": "田亩种类",
+          "description": "不同田亩的基础税费是不同的",
+          "type": "string"
+        },
+        "is_royal": {
+          "label": "是否皇室",
+          "description": "True=收入归内帑，False=收入归国库",
+          "type": "boolean"
+        },
+        "area": {
+          "label": "面积（亩）",
+          "description": "",
+          "type": "integer"
+        },
+        "tax_base": {
+          "label": "基本田赋（两/亩/季度）",
+          "description": "最基础的粮食税及实物税折银后所征，明朝开国时承诺“永不加赋”。",
+          "type": "number"
+        },
+        "tax_liao": {
+          "label": "辽饷（两/亩/季度）",
+          "description": "朝廷为应对后金威胁所加征的税费，主要用于辽东军需",
+          "type": "number"
+        },
+        "tax_old": {
+          "label": "旧饷（两/亩/季度）",
+          "description": "虽称永不加赋，但此后根据财政需要又另起的各类税费名目。",
+          "type": "number"
+        },
+        "tax_new": {
+          "label": "新饷（两/亩/季度）",
+          "description": "崇祯朝以来所新加派的赋税",
+          "type": "number"
+        },
+        "income": {
+          "label": "收入（两）",
+          "description": "田亩的赋税总和",
+          "type": "number"
+        }
+      }
+    },
+    "ProvinceEconomyViewResponse": {
+      "fields": {
+        "land_details": {
+          "label": "田亩",
+          "description": "该省份各土地类型的面积、税率与收入明细",
+          "type": "array",
+          "ref": "LandDetailResponse"
+        },
+        "tax_shipping_liao": {
+          "label": "辽饷收入（两）",
+          "description": "该省份所征收的辽饷上缴给中央的总和",
+          "type": "number"
+        },
+        "tax_shipping_old": {
+          "label": "旧饷收入（两）",
+          "description": "该省份所征收的旧饷（包含各类军费等前朝加派的税收）上缴给中央的总和",
+          "type": "number"
+        },
+        "tax_shipping_new": {
+          "label": "新饷收入（两）",
+          "description": "该省份所征收的新饷（开始游戏之后玩家新征收的一些列税收）上缴给中央的总和",
+          "type": "number"
+        },
+        "tax_shipping_land": {
+          "label": "田赋收入（两）",
+          "description": "该省份上缴给中央的基本田税总和",
+          "type": "number"
+        },
+        "production_total": {
+          "label": "粮食产量（石）",
+          "description": "该省份一季度的粮食产量",
+          "type": "integer"
+        },
+        "production_per_capita": {
+          "label": "人均粮食产量（石/人）",
+          "description": "平均每人每季度拥有多少粮食。通常每人每季度需要1石粮食维持生活。",
+          "type": "number"
+        },
+        "tax_total": {
+          "label": "总收入税银（两）",
+          "description": "该省份除去自用部分后上交给中央的全部税银总和",
+          "type": "number"
+        },
+        "regime_id": {
+          "label": "所属势力键值",
+          "description": "该省份隶属于哪一个势力",
+          "type": "string"
+        },
+        "code_name": {
+          "label": "地块键值",
+          "description": "省份的唯一定位代码",
+          "type": "string"
+        },
+        "name": {
+          "label": "地块名称",
+          "description": "省份的官方名称",
+          "type": "string"
+        },
+        "population": {
+          "label": "人口",
+          "description": "该省份登记在册的居民总数（不包含流民）",
+          "type": "string"
+        },
+        "public_sentiment": {
+          "label": "民心",
+          "description": "该省份的民众对现状的满意度，该数字越大，政令在该地区执行就越顺利",
+          "type": "string"
+        },
+        "rebellion_risk": {
+          "label": "动乱",
+          "description": "该省份的动乱程度，该数字越大，就越有可能生成叛军，并破坏生产",
+          "type": "string"
+        },
+        "yield_mu": {
+          "label": "粮食亩产（石/季度）",
+          "description": "该省份每亩每季度能够生产多少石粮食",
+          "type": "string"
+        },
+        "tax_rate": {
+          "label": "税收倍率",
+          "description": "依据朝廷政策为诸省份设定的或减免或加赋的倍率（0.5为正常）",
+          "type": "string"
+        },
+        "other_tax": {
+          "label": "其它税收（两）",
+          "description": "其他无法归类的税收",
+          "type": "string"
+        },
+        "disaster_status": {
+          "label": "当前灾害",
+          "description": "该省份目前的灾情种类",
+          "type": "string"
+        },
+        "disaster_level": {
+          "label": "灾害严重等级",
+          "description": "该省份当前灾情的严重等级",
+          "type": "string"
+        },
+        "defence_level": {
+          "label": "城防等级",
+          "description": "该地区城池和要塞的坚固程度，最高为10.没有足够的火炮和步兵将无法夺取高城防的地块",
+          "type": "string"
+        },
+        "tax_efficiency": {
+          "label": "税收完成率",
+          "description": "对税收计划的完成率，反映了中央政府对当地的行政掌控力。当税收完成率为50%时，说明应缴的100两税收只收缴了50两",
+          "type": "string"
+        },
+        "is_coastal": {
+          "label": "是否沿海",
+          "description": "不沿海的省份不会发生海啸，也无法驻扎海军",
+          "type": "string"
+        },
+        "description": {
+          "label": "描述",
+          "description": "地区的解释",
+          "type": "string"
+        }
+      }
+    },
+    "SocialClassResponse": {
+      "fields": {
+        "code_name": {
+          "label": "阶层键值",
+          "description": "该阶层唯一编号",
+          "type": "string"
+        },
+        "name": {
+          "label": "阶层名称",
+          "description": "该阶层名称",
+          "type": "string"
+        },
+        "description": {
+          "label": "描述",
+          "description": "对该阶层的描述",
+          "type": "string"
+        },
+        "satisfaction": {
+          "label": "满意度",
+          "description": "该阶层整体对皇帝和当前现状的满意度。满意度越高，他们越可能自发支持您的政令，反之将会阻挠您的命令",
+          "type": "integer"
+        },
+        "influence": {
+          "label": "整体影响力",
+          "description": "该阶层在帝国中的影响力，指代其掌握的帝国各行业命脉和盘根错节的利益网络。如果阶层的影响力较高，他们就能根据满意度和叛乱风险进行卓有成效的行动；如果影响力较低，无论他们的满意度和叛乱风险如何，都掀不起什么风浪。",
+          "type": "integer"
+        },
+        "rebellion_risk": {
+          "label": "叛乱风险",
+          "description": "该阶层的叛乱风险。叛乱风险越高，他们越可能造反，具体到阶层上，士绅可能会结镇抗税、农民可能会起义，军队可能会哗变，而宦官可能会密谋暗杀皇帝。",
+          "type": "integer"
+        },
+        "id": {
+          "label": "阶层ID",
+          "description": "阶层ID",
+          "type": "integer"
+        }
+      }
+    },
+    "EquipmentResponse": {
+      "fields": {
+        "code_name": {
+          "label": "装备键值",
+          "description": "该种装备唯一代码",
+          "type": "string"
+        },
+        "name": {
+          "label": "装备名称",
+          "description": "该装备名称",
+          "type": "string"
+        },
+        "stock_count": {
+          "label": "库存数量",
+          "description": "该种装备在库房中的现有存量",
+          "type": "integer"
+        },
+        "annual_output": {
+          "label": "季度产量",
+          "description": "该种装备每季度的产量",
+          "type": "integer"
+        },
+        "description": {
+          "label": "描述",
+          "description": "装备描述和简介",
+          "type": "string"
+        },
+        "id": {
+          "label": "装备ID",
+          "description": "装备ID",
+          "type": "integer"
+        }
+      }
+    },
+    "ArmConfigViewResponse": {
+      "fields": {
+        "code_name": {
+          "label": "兵种键值",
+          "description": "兵种的唯一代码",
+          "type": "string"
+        },
+        "name": {
+          "label": "兵种名称",
+          "description": "兵种的称呼",
+          "type": "string"
+        },
+        "maintenance_cost": {
+          "label": "维护费（两/季度）",
+          "description": "该兵种正常情况下一季度的耗费（包括饷银、武器损耗等）",
+          "type": "number"
+        },
+        "equipment_requirements": {
+          "label": "需求装备",
+          "description": "该兵种需要的装备",
+          "type": "array",
+          "ref": "EquipmentResponse"
+        },
+        "description": {
+          "label": "描述",
+          "description": "该兵种的简介",
+          "type": "string"
+        },
+        "id": {
+          "label": "兵种ID",
+          "description": "兵种ID",
+          "type": "integer"
+        }
+      }
+    },
+    "ShipConfigResponse": {
+      "fields": {
+        "code_name": {
+          "label": "船种键值",
+          "description": "此种舰船的唯一编号",
+          "type": "string"
+        },
+        "name": {
+          "label": "船种名称",
+          "description": "此种舰船名称",
+          "type": "string"
+        },
+        "crew_count": {
+          "label": "船员人数",
+          "description": "该船种的船员人数；可选整数，最小 0。",
+          "type": "integer"
+        },
+        "light_cannon_count": {
+          "label": "轻型舰炮数量",
+          "description": "此种舰船装备的轻型火炮（如弗朗机火炮和千斤发熕等）",
+          "type": "integer"
+        },
+        "heavy_cannon_count": {
+          "label": "重型舰炮数量",
+          "description": "此种舰炮装备的重型火炮（如红夷大炮等）",
+          "type": "integer"
+        },
+        "maintenance_cost": {
+          "label": "维护费（两/季度）",
+          "description": "该艘舰船及水手每季度耗费的银两",
+          "type": "number"
+        },
+        "description": {
+          "label": "描述",
+          "description": "对舰船的简介",
+          "type": "string"
+        },
+        "id": {
+          "label": "船种ID",
+          "description": "船种ID",
+          "type": "integer"
+        }
+      }
+    },
+    "TroopShipStats": {
+      "fields": {
+        "crew": {
+          "label": "水手编制",
+          "description": "",
+          "type": "integer"
+        },
+        "heavy_cannon": {
+          "label": "轻炮数量",
+          "description": "",
+          "type": "integer"
+        },
+        "light_cannon": {
+          "label": "重炮数量",
+          "description": "",
+          "type": "integer"
+        }
+      }
+    },
+    "TroopEquipmentRequirement": {
+      "fields": {
+        "code_name": {
+          "label": "装备键值",
+          "description": "该种装备唯一代码",
+          "type": "string"
+        },
+        "name": {
+          "label": "装备名称",
+          "description": "该装备的名称",
+          "type": "string"
+        },
+        "stock_count": {
+          "label": "库存数量",
+          "description": "该种装备在库房中的现有存量",
+          "type": "integer"
+        },
+        "annual_output": {
+          "label": "季度产量",
+          "description": "该种装备每季度的产量",
+          "type": "integer"
+        },
+        "description": {
+          "label": "描述",
+          "description": "装备描述和简介",
+          "type": "string"
+        },
+        "id": {
+          "label": "装备ID",
+          "description": "装备ID",
+          "type": "integer"
+        },
+        "demand_per_unit": {
+          "label": "单兵需求",
+          "description": "",
+          "type": "integer"
+        }
+      }
+    },
+    "TroopCompositionUnit": {
+      "fields": {
+        "id": {
+          "label": "配置ID",
+          "description": "",
+          "type": "integer"
+        },
+        "name": {
+          "label": "名称",
+          "description": "",
+          "type": "string"
+        },
+        "count": {
+          "label": "数量",
+          "description": "",
+          "type": "integer"
+        },
+        "code_name": {
+          "label": "键值",
+          "description": "",
+          "type": "string"
+        },
+        "ship_stats": {
+          "label": "船只属性",
+          "description": "",
+          "type": "object",
+          "ref": "TroopShipStats"
+        },
+        "description": {
+          "label": "描述",
+          "description": "",
+          "type": "string"
+        },
+        "maintenance_cost": {
+          "label": "维护费用",
+          "description": "",
+          "type": "number"
+        },
+        "equipment_requirements": {
+          "label": "装备需求",
+          "description": "装备需求列表",
+          "type": "array",
+          "ref": "TroopEquipmentRequirement"
+        }
+      }
+    },
+    "TroopArmyDetailsResponse": {
+      "fields": {
+        "code_name": {
+          "label": "军队键值",
+          "description": "该军队的唯一编号",
+          "type": "string"
+        },
+        "name": {
+          "label": "军队名称",
+          "description": "该军队的名称",
+          "type": "string"
+        },
+        "type": {
+          "label": "军种",
+          "description": "army（陆军）或navy（海军）",
+          "type": "string"
+        },
+        "exp": {
+          "label": "战斗经验",
+          "description": "该军队的作战经验；经验越高则战斗力越强，越不容易崩溃；每次作战后都会增加战斗经验，但军队伤亡补员后经验会下降",
+          "type": "integer"
+        },
+        "morale": {
+          "label": "士气",
+          "description": "士气是军队的作战决心，随着战斗进行士气会逐渐降低，一旦士气归零军队就会溃败。",
+          "type": "integer"
+        },
+        "loyalty": {
+          "label": "忠诚",
+          "description": "军队的忠诚度越高，哗变和投敌的概率就越低。",
+          "type": "integer"
+        },
+        "supply": {
+          "label": "补给",
+          "description": "军队的后勤补给状况。补给值越高士气上限和士气恢复速度就越高。",
+          "type": "integer"
+        },
+        "extra_cost": {
+          "label": "额外花费\n（两/人/季度）",
+          "description": "奖赏、加薪、边军补贴、甚至是吃空饷导致的额外花费等",
+          "type": "number"
+        },
+        "salary_rate": {
+          "label": "满饷率",
+          "description": "军队实发饷银比例。若财政紧张，则不得不暂时欠饷。\n该值与军队的战斗力高度相关",
+          "type": "number"
+        },
+        "resource": {
+          "label": "资源",
+          "description": "该军队的资源",
+          "type": "string"
+        },
+        "id": {
+          "label": "自增ID",
+          "description": "",
+          "type": "integer"
+        },
+        "equipments": {
+          "label": "需求装备",
+          "description": "该部队所需的装备",
+          "type": "array",
+          "ref": "EquipmentResponse"
+        },
+        "total_maintenance_cost": {
+          "label": "维护费（两/季度）",
+          "description": "该军队一季度需要消耗的银钱总数",
+          "type": "number"
+        },
+        "total_strength": {
+          "label": "总人数",
+          "description": "军队的总人数",
+          "type": "integer"
+        },
+        "regime": {
+          "label": "所属势力信息",
+          "description": "所属势力信息",
+          "type": "object",
+          "ref": "RegimeResponse"
+        },
+        "province": {
+          "label": "驻扎省份信息",
+          "description": "驻扎省份信息",
+          "type": "object",
+          "ref": "ProvinceResponse"
+        },
+        "compositions": {
+          "label": "部队构成详情",
+          "description": "部队的详细组成信息",
+          "type": "array",
+          "ref": "TroopCompositionUnit"
+        },
+        "regime_id": {
+          "label": "所属势力键值",
+          "description": "该军队接受哪支势力指挥",
+          "type": "string"
+        },
+        "location_province_id": {
+          "label": "驻扎省份",
+          "description": "该军队目前的驻地",
+          "type": "string"
+        },
+        "composition": {
+          "label": "兵种组成",
+          "description": "军队的具体组成",
+          "type": "string"
+        },
+        "attached_personnel_count": {
+          "label": "水军战兵人数",
+          "description": "该支海军中的武装水手人数，缺少战兵的海军将无法进行接弦战和登陆战",
+          "type": "string"
+        }
+      }
+    },
+    "TroopNavyDetailsResponse": {
+      "fields": {
+        "code_name": {
+          "label": "军队键值",
+          "description": "该军队的唯一编号",
+          "type": "string"
+        },
+        "name": {
+          "label": "军队名称",
+          "description": "该军队的名称",
+          "type": "string"
+        },
+        "type": {
+          "label": "军种",
+          "description": "army（陆军）或navy（海军）",
+          "type": "string"
+        },
+        "exp": {
+          "label": "战斗经验",
+          "description": "该军队的作战经验；经验越高则战斗力越强，越不容易崩溃；每次作战后都会增加战斗经验，但军队伤亡补员后经验会下降",
+          "type": "integer"
+        },
+        "morale": {
+          "label": "士气",
+          "description": "士气是军队的作战决心，随着战斗进行士气会逐渐降低，一旦士气归零军队就会溃败。",
+          "type": "integer"
+        },
+        "loyalty": {
+          "label": "忠诚",
+          "description": "军队的忠诚度越高，哗变和投敌的概率就越低。",
+          "type": "integer"
+        },
+        "supply": {
+          "label": "补给",
+          "description": "军队的后勤补给状况。补给值越高士气上限和士气恢复速度就越高。",
+          "type": "integer"
+        },
+        "attached_personnel_count": {
+          "label": "水军战兵人数",
+          "description": "该支海军中的武装水手人数，缺少战兵的海军将无法进行接弦战和登陆战",
+          "type": "integer"
+        },
+        "extra_cost": {
+          "label": "额外花费\n（两/人/季度）",
+          "description": "奖赏、加薪、边军补贴、甚至是吃空饷导致的额外花费等",
+          "type": "number"
+        },
+        "salary_rate": {
+          "label": "满饷率",
+          "description": "军队实发饷银比例。若财政紧张，则不得不暂时欠饷。\n该值与军队的战斗力高度相关",
+          "type": "number"
+        },
+        "resource": {
+          "label": "资源",
+          "description": "该军队的资源",
+          "type": "string"
+        },
+        "id": {
+          "label": "自增ID",
+          "description": "",
+          "type": "integer"
+        },
+        "equipments": {
+          "label": "需求装备",
+          "description": "该部队所需的装备",
+          "type": "array",
+          "ref": "EquipmentResponse"
+        },
+        "total_maintenance_cost": {
+          "label": "维护费（两/季度）",
+          "description": "该军队一季度需要消耗的银钱总数",
+          "type": "number"
+        },
+        "total_ships": {
+          "label": "舰船数量",
+          "description": "该支海军的舰船总数",
+          "type": "integer"
+        },
+        "regime": {
+          "label": "所属势力信息",
+          "description": "所属势力信息",
+          "type": "object",
+          "ref": "RegimeResponse"
+        },
+        "province": {
+          "label": "驻扎省份信息",
+          "description": "驻扎省份信息",
+          "type": "object",
+          "ref": "ProvinceResponse"
+        },
+        "compositions": {
+          "label": "部队构成详情",
+          "description": "部队的详细组成信息",
+          "type": "array",
+          "ref": "TroopCompositionUnit"
+        },
+        "regime_id": {
+          "label": "所属势力键值",
+          "description": "该军队接受哪支势力指挥",
+          "type": "string"
+        },
+        "location_province_id": {
+          "label": "驻扎省份",
+          "description": "该军队目前的驻地",
+          "type": "string"
+        },
+        "composition": {
+          "label": "兵种组成",
+          "description": "军队的具体组成",
+          "type": "string"
+        }
+      }
+    },
+    "TroopCompositionResponse": {
+      "fields": {
+        "army": {
+          "label": "陆军",
+          "description": "",
+          "type": "array",
+          "ref": "TroopArmyDetailsResponse"
+        },
+        "navy": {
+          "label": "海军",
+          "description": "",
+          "type": "array",
+          "ref": "TroopNavyDetailsResponse"
+        }
+      }
+    },
+    "PlayerEventPayloadDisplayInfo": {
+      "fields": {
+        "target_name": {
+          "label": "target_name",
+          "description": "目标名称",
+          "type": "string"
+        },
+        "value_name": {
+          "label": "value_name",
+          "description": "值名称",
+          "type": "string"
+        },
+        "positive_verb": {
+          "label": "positive_verb",
+          "description": "正面动词",
+          "type": "string"
+        },
+        "negative_verb": {
+          "label": "negative_verb",
+          "description": "负面动词",
+          "type": "string"
+        },
+        "unit": {
+          "label": "unit",
+          "description": "单位",
+          "type": "string"
+        },
+        "key_map": {
+          "label": "key_map",
+          "description": "键映射",
+          "type": "string"
+        },
+        "display_description": {
+          "label": "display_description",
+          "description": "面向用户的自然语言展示描述",
+          "type": "string"
+        },
+        "ai_description": {
+          "label": "ai_description",
+          "description": "面向大模型理解的结构化描述",
+          "type": "string"
+        }
+      }
+    },
+    "PlayerEventPayload": {
+      "fields": {
+        "field": {
+          "label": "field",
+          "description": "字段名",
+          "type": "string"
+        },
+        "value": {
+          "label": "value",
+          "description": "字段值",
+          "type": "string"
+        },
+        "op": {
+          "label": "op",
+          "description": "操作符，如 'SET', 'INCREMENT'",
+          "type": "string"
+        },
+        "key": {
+          "label": "key",
+          "description": "JSONB 键名",
+          "type": "string"
+        },
+        "display_info": {
+          "label": "display_info",
+          "description": "显示信息",
+          "type": "object",
+          "ref": "PlayerEventPayloadDisplayInfo"
+        }
+      }
+    },
+    "PlayerEventResponse": {
+      "fields": {
+        "player_id": {
+          "label": "player_id",
+          "description": "玩家ID",
+          "type": "string"
+        },
+        "current_turn": {
+          "label": "current_turn",
+          "description": "回合数",
+          "type": "integer"
+        },
+        "target_table": {
+          "label": "target_table",
+          "description": "目标表名，如 'ministers', 'provinces'",
+          "type": "string"
+        },
+        "target_id": {
+          "label": "target_id",
+          "description": "目标表的主键ID",
+          "type": "integer"
+        },
+        "action_type": {
+          "label": "action_type",
+          "description": "动作类型，如 'UPDATE_FIELD', 'JSON_MERGE'",
+          "type": "string"
+        },
+        "payload": {
+          "label": "payload",
+          "description": "核心载荷",
+          "type": "object",
+          "ref": "PlayerEventPayload"
+        },
+        "caused_by_event_id": {
+          "label": "caused_by_event_id",
+          "description": "因果链源事件ID，用于向后级联撤销",
+          "type": "integer"
+        },
+        "id": {
+          "label": "id",
+          "description": "自增ID",
+          "type": "integer"
+        }
+      }
+    },
+    "CabinetPosition": {
+      "fields": {
+        "key": {
+          "label": "官职标识",
+          "description": "官职唯一英文标识",
+          "type": "string"
+        },
+        "name": {
+          "label": "官职名称",
+          "description": "官职中文名称",
+          "type": "string"
+        },
+        "rank": {
+          "label": "官职品级",
+          "description": "官职品级",
+          "type": "string"
+        },
+        "official_minister_id": {
+          "label": "official_minister_id",
+          "description": "当前在任大臣的ID，空缺为 None",
+          "type": "integer"
+        },
+        "designate": {
+          "label": "拟任命",
+          "description": "是否为拟任命",
+          "type": "boolean"
+        }
+      }
+    },
+    "CabinetResponse": {
+      "fields": {
+        "positions": {
+          "label": "内阁职位",
+          "description": "内阁的所有职位",
+          "type": "array",
+          "ref": "CabinetPosition"
+        },
+        "group_name": {
+          "label": "内阁组名称",
+          "description": "内阁组的中文名称",
+          "type": "string"
+        },
+        "group_code": {
+          "label": "内阁组代码",
+          "description": "内阁组的英文标识",
+          "type": "string"
+        }
+      }
+    },
+    "FinanceResponse": {
+      "fields": {
+        "current_turn": {
+          "label": "当前回合",
+          "description": "该行财政数据对应的回合；只读整数，由编辑器维护，默认 1。",
+          "type": "integer"
+        },
+        "treasury": {
+          "label": "国库余额（两）",
+          "description": "大明国库的库存银两，保持一定的库存额将有助于应对突发灾情",
+          "type": "number"
+        },
+        "salt_tea_tax": {
+          "label": "盐茶课（两）",
+          "description": "商人贩卖茶盐，须向官方购买“引”作为许可和凭证",
+          "type": "number"
+        },
+        "transport_tax": {
+          "label": "船钞商课（两）",
+          "description": "各水运要道设有“钞关”，船只往来通行需纳税；另外小贩摆摊和市场交易都需要缴纳较低的税费。",
+          "type": "number"
+        },
+        "ore_tax": {
+          "label": "矿业收入（两）",
+          "description": "高产量的金银矿由官方直接开采作为收入；而低产量金银矿则准许民间开采，朝廷抽取一定的“矿课”作为税费",
+          "type": "number"
+        },
+        "other_treasury_income": {
+          "label": "杂项收入（两）",
+          "description": "各类繁杂细小税务名目",
+          "type": "number"
+        },
+        "salary_cost": {
+          "label": "宗室供奉（两）",
+          "description": "依据大明祖制每季度发放给庞大的皇室宗亲群体的供养费用。",
+          "type": "number"
+        },
+        "official_salary": {
+          "label": "文官俸禄（两）",
+          "description": "每季度发放给全国数万名朝廷命官的俸禄。如果俸禄过低，这些官员就不得不依靠灰色收入维持生活",
+          "type": "number"
+        },
+        "other_treasury_cost": {
+          "label": "杂项支出（两）",
+          "description": "本季度度各类繁杂名目的支出总额",
+          "type": "number"
+        },
+        "privacy": {
+          "label": "内帑余额（两）",
+          "description": "内帑是皇帝的私人金库，于国库和官方财政分开运行。内帑多用于皇帝的个人开销",
+          "type": "number"
+        },
+        "trade_tax": {
+          "label": "商业税收入（两）",
+          "description": "由宦官在各地通过搜刮商贾，拦截道路，强买强卖，垄断居奇等一系列手段为皇帝搜刮得来的商业收入。\n这项收入严重打击了明朝的商业贸易。",
+          "type": "number"
+        },
+        "jinhua_tax": {
+          "label": "金花银（两）",
+          "description": "江南诸省上缴的部分粮税折算成白银后充入皇室内库",
+          "type": "number"
+        },
+        "taipusi_silver_income": {
+          "label": "太仆寺马价银（两）",
+          "description": "太仆寺负责各地马政，每季度从各地收取马匹。随着民间养马日渐困难。政府逐渐允许马户不再上交实物马驹，而是按照市场价或官定价，直接缴纳银两，由官方统一去边境买马。\n然而最终这笔钱的去向成为了皇帝私库",
+          "type": "number"
+        },
+        "other_privacy_income": {
+          "label": "内帑其他收入（两）",
+          "description": "内帑其它名目繁多的收入",
+          "type": "number"
+        },
+        "palace_cost": {
+          "label": "内宫用度（两）",
+          "description": "庞大的宫殿中各近臣侍从嫔妃等的日常吃穿用度及俸禄",
+          "type": "number"
+        },
+        "guard_cost": {
+          "label": "武将及亲卫支出（两）",
+          "description": "贴身禁卫、东西厂、锦衣卫的开销。以及全国武将的俸禄都由内帑支出。",
+          "type": "number"
+        },
+        "engineering_cost": {
+          "label": "皇家工程（两）",
+          "description": "宫殿修缮和陵寝修建。\n崇祯初季度因财政困顿未进行陵寝修建。但此举也向外透露出大明的虚弱，削弱了国民信心和皇帝权威",
+          "type": "number"
+        },
+        "other_privacy_cost": {
+          "label": "内帑其他支出（两）",
+          "description": "内帑其它繁杂名目支出",
+          "type": "number"
+        },
+        "imperial_work_income": {
+          "label": "皇庄产业收入（两）",
+          "description": "皇庄中的一些手工产业带来的收入",
+          "type": "number"
+        },
+        "id": {
+          "label": "财务记录ID",
+          "description": "财政记录的自增ID",
+          "type": "integer"
+        },
+        "player_id": {
+          "label": "所属玩家ID",
+          "description": "财政记录所属的玩家ID",
+          "type": "string"
+        }
+      }
+    },
+    "TreasuryIncomeDetail": {
+      "fields": {
+        "salt_tea_tax": {
+          "label": "盐茶课（两）",
+          "description": "商人贩卖茶盐，须向官方购买“引”作为许可和凭证",
+          "type": "number"
+        },
+        "transport_tax": {
+          "label": "船钞商课（两）",
+          "description": "各水运要道设有“钞关”，船只往来通行需纳税；另外小贩摆摊和市场交易都需要缴纳较低的税费。",
+          "type": "number"
+        },
+        "ore_tax": {
+          "label": "矿业收入（两）",
+          "description": "高产量的金银矿由官方直接开采作为收入；而低产量金银矿则准许民间开采，朝廷抽取一定的“矿课”作为税费",
+          "type": "number"
+        },
+        "other_treasury_income": {
+          "label": "杂项收入（两）",
+          "description": "各类繁杂细小税务名目",
+          "type": "number"
+        },
+        "total_land_tax": {
+          "label": "全国田赋（两）",
+          "description": "全国本季度预计上缴的基本田赋总和",
+          "type": "number"
+        },
+        "total_liao_tax": {
+          "label": "全国辽饷（两）",
+          "description": "全国本季度所征收用于应对后金威胁尔加派的税费，主要用于辽东军需",
+          "type": "number"
+        },
+        "total_old_tax": {
+          "label": "全国旧饷（两）",
+          "description": "全国本季度所上缴的崇祯朝以前所加派的各类军需杂税",
+          "type": "number"
+        },
+        "total_new_tax": {
+          "label": "全国新饷（两）",
+          "description": "全国本季度所上缴的崇祯朝之后加派的税费",
+          "type": "number"
+        }
+      }
+    },
+    "TreasuryExpenseDetail": {
+      "fields": {
+        "salary_cost": {
+          "label": "宗室供奉（两）",
+          "description": "依据大明祖制每季度发放给庞大的皇室宗亲群体的供养费用。",
+          "type": "number"
+        },
+        "official_salary": {
+          "label": "文官俸禄（两）",
+          "description": "每季度发放给全国数万名朝廷命官的俸禄。如果俸禄过低，这些官员就不得不依靠灰色收入维持生活",
+          "type": "number"
+        },
+        "other_treasury_cost": {
+          "label": "杂项支出（两）",
+          "description": "本季度度各类繁杂名目的支出总额",
+          "type": "number"
+        },
+        "treasury_corruption_cost": {
+          "label": "财政浪费（两）",
+          "description": "庞大的帝国财政收入被官僚系统以各种名义输支挪用，不翼而飞。该项值与腐败度相关",
+          "type": "number"
+        },
+        "treasury_total_army_expense": {
+          "label": "军队维护费（两）",
+          "description": "各支军队的军饷、器械损耗",
+          "type": "number"
+        }
+      }
+    },
+    "TreasuryDetail": {
+      "fields": {
+        "total_income": {
+          "label": "财政总收入（两）",
+          "description": "本季度官方财政的收入总和",
+          "type": "number"
+        },
+        "total_expense": {
+          "label": "财政总支出（两）",
+          "description": "本季度度官方财政支出总额",
+          "type": "number"
+        },
+        "net_profit": {
+          "label": "财政净出入（两）",
+          "description": "本季度的财政收入减去本季度度财政支出后的差额",
+          "type": "number"
+        },
+        "balance": {
+          "label": "国库余额（两）",
+          "description": "大明国库的库存银两，保持一定的库存额将有助于应对突发灾情",
+          "type": "number"
+        },
+        "income_detail": {
+          "label": "收入明细",
+          "description": "国库收入明细",
+          "type": "object",
+          "ref": "TreasuryIncomeDetail"
+        },
+        "expense_detail": {
+          "label": "支出明细",
+          "description": "国库支出明细",
+          "type": "object",
+          "ref": "TreasuryExpenseDetail"
+        }
+      }
+    },
+    "PrivacyIncomeDetail": {
+      "fields": {
+        "total_imperial_income": {
+          "label": "皇田收入（两）",
+          "description": "各州府所有权为皇家的田地成为皇田，所收取的租子或“籽粒银”直接充入内帑",
+          "type": "number"
+        },
+        "imperial_work_income": {
+          "label": "皇庄产业收入（两）",
+          "description": "皇庄中的一些手工产业带来的收入",
+          "type": "number"
+        },
+        "trade_tax": {
+          "label": "商业税收入（两）",
+          "description": "由宦官在各地通过搜刮商贾，拦截道路，强买强卖，垄断居奇等一系列手段为皇帝搜刮得来的商业收入。\n这项收入严重打击了明朝的商业贸易。",
+          "type": "number"
+        },
+        "jinhua_tax": {
+          "label": "金花银（两）",
+          "description": "江南诸省上缴的部分粮税折算成白银后充入皇室内库",
+          "type": "number"
+        },
+        "taipusi_silver_income": {
+          "label": "太仆寺马价银（两）",
+          "description": "太仆寺负责各地马政，每季度从各地收取马匹。随着民间养马日渐困难。政府逐渐允许马户不再上交实物马驹，而是按照市场价或官定价，直接缴纳银两，由官方统一去边境买马。\n然而最终这笔钱的去向成为了皇帝私库",
+          "type": "number"
+        },
+        "other_privacy_income": {
+          "label": "内帑其他收入（两）",
+          "description": "内帑其它名目繁多的收入",
+          "type": "number"
+        }
+      }
+    },
+    "PrivacyExpenseDetail": {
+      "fields": {
+        "palace_cost": {
+          "label": "内宫用度（两）",
+          "description": "庞大的宫殿中各近臣侍从嫔妃等的日常吃穿用度及俸禄",
+          "type": "number"
+        },
+        "guard_cost": {
+          "label": "武将及亲卫支出（两）",
+          "description": "贴身禁卫、东西厂、锦衣卫的开销。以及全国武将的俸禄都由内帑支出。",
+          "type": "number"
+        },
+        "engineering_cost": {
+          "label": "皇家工程（两）",
+          "description": "宫殿修缮和陵寝修建。\n崇祯初季度因财政困顿未进行陵寝修建。但此举也向外透露出大明的虚弱，削弱了国民信心和皇帝权威",
+          "type": "number"
+        },
+        "other_privacy_cost": {
+          "label": "内帑其他支出（两）",
+          "description": "内帑其它繁杂名目支出",
+          "type": "number"
+        }
+      }
+    },
+    "PrivacyDetail": {
+      "fields": {
+        "total_income": {
+          "label": "内帑总收入（两）",
+          "description": "本季度度内帑收入总和",
+          "type": "number"
+        },
+        "total_expense": {
+          "label": "内帑总支出（两）",
+          "description": "本季度度内帑所有支出的总和",
+          "type": "number"
+        },
+        "net_profit": {
+          "label": "内帑净出入（两）",
+          "description": "本季度度内帑的收入总和减去本季度度内帑支出总和的差额",
+          "type": "number"
+        },
+        "balance": {
+          "label": "内帑余额（两）",
+          "description": "内帑是皇帝的私人金库，于国库和官方财政分开运行。内帑多用于皇帝的个人开销",
+          "type": "number"
+        },
+        "income_detail": {
+          "label": "收入明细",
+          "description": "内帑收入明细",
+          "type": "object",
+          "ref": "PrivacyIncomeDetail"
+        },
+        "expense_detail": {
+          "label": "支出明细",
+          "description": "内帑支出明细",
+          "type": "object",
+          "ref": "PrivacyExpenseDetail"
+        }
+      }
+    },
+    "FinanceStatusResponse": {
+      "fields": {
+        "treasury": {
+          "label": "国库余额（两）",
+          "description": "大明国库的库存银两，保持一定的库存额将有助于应对突发灾情",
+          "type": "object",
+          "ref": "TreasuryDetail"
+        },
+        "privacy": {
+          "label": "内帑余额（两）",
+          "description": "内帑是皇帝的私人金库，于国库和官方财政分开运行。内帑多用于皇帝的个人开销",
+          "type": "object",
+          "ref": "PrivacyDetail"
+        },
+        "current_turn": {
+          "label": "当前回合",
+          "description": "当前回合",
+          "type": "string"
+        },
+        "salt_tea_tax": {
+          "label": "盐茶课（两）",
+          "description": "商人贩卖茶盐，须向官方购买“引”作为许可和凭证",
+          "type": "string"
+        },
+        "transport_tax": {
+          "label": "船钞商课（两）",
+          "description": "商人贩卖茶盐，须向官方购买“引”作为许可和凭证",
+          "type": "string"
+        },
+        "ore_tax": {
+          "label": "矿业收入（两）",
+          "description": "高产量的金银矿由官方直接开采作为收入；而低产量金银矿则准许民间开采，朝廷抽取一定的“矿课”作为税费",
+          "type": "string"
+        },
+        "other_treasury_income": {
+          "label": "杂项收入（两）",
+          "description": "各类繁杂细小税务名目",
+          "type": "string"
+        },
+        "salary_cost": {
+          "label": "宗室供奉（两）",
+          "description": "依据大明祖制每季度发放给庞大的皇室宗亲群体的供养费用。",
+          "type": "string"
+        },
+        "official_salary": {
+          "label": "文官俸禄（两）",
+          "description": "每季度发放给全国数万名朝廷命官的俸禄。如果俸禄过低，这些官员就不得不依靠灰色收入维持生活",
+          "type": "string"
+        },
+        "other_treasury_cost": {
+          "label": "杂项支出（两）",
+          "description": "本季度度各类繁杂名目的支出总额",
+          "type": "string"
+        },
+        "trade_tax": {
+          "label": "商业税收入（两）",
+          "description": "由宦官在各地通过搜刮商贾，拦截道路，强买强卖，垄断居奇等一系列手段为皇帝搜刮得来的商业收入。\n这项收入严重打击了明朝的商业贸易。",
+          "type": "string"
+        },
+        "jinhua_tax": {
+          "label": "金花银（两）",
+          "description": "江南诸省上缴的部分粮税折算成白银后充入皇室内库",
+          "type": "string"
+        },
+        "imperial_work_income": {
+          "label": "皇庄产业收入（两）",
+          "description": "皇庄中的一些手工产业带来的收入",
+          "type": "string"
+        },
+        "taipusi_silver_income": {
+          "label": "太仆寺马价银（两）",
+          "description": "太仆寺负责各地马政，每季度从各地收取马匹。随着民间养马日渐困难。政府逐渐允许马户不再上交实物马驹，而是按照市场价或官定价，直接缴纳银两，由官方统一去边境买马。\n然而最终这笔钱的去向成为了皇帝私库",
+          "type": "string"
+        },
+        "other_privacy_income": {
+          "label": "内帑其他收入（两）",
+          "description": "内帑其它名目繁多的收入",
+          "type": "string"
+        },
+        "palace_cost": {
+          "label": "内宫用度（两）",
+          "description": "庞大的宫殿中各近臣侍从嫔妃等的日常吃穿用度及俸禄",
+          "type": "string"
+        },
+        "guard_cost": {
+          "label": "武将及亲卫支出（两）",
+          "description": "贴身禁卫、东西厂、锦衣卫的开销。以及全国武将的俸禄都由内帑支出。",
+          "type": "string"
+        },
+        "engineering_cost": {
+          "label": "皇家工程（两）",
+          "description": "宫殿修缮和陵寝修建。\n崇祯初季度因财政困顿未进行陵寝修建。但此举也向外透露出大明的虚弱，削弱了国民信心和皇帝权威",
+          "type": "string"
+        },
+        "other_privacy_cost": {
+          "label": "内帑其他支出（两）",
+          "description": "内帑其它繁杂名目支出",
+          "type": "string"
+        }
+      }
+    },
+    "DashboardProvinceDetail": {
+      "fields": {
+        "id": {
+          "label": "省份ID",
+          "description": "省份ID",
+          "type": "integer"
+        },
+        "name": {
+          "label": "省份名称",
+          "description": "省份名称",
+          "type": "string"
+        },
+        "code_name": {
+          "label": "省份键值",
+          "description": "省份的唯一代码",
+          "type": "string"
+        },
+        "public_sentiment": {
+          "label": "民心",
+          "description": "该省份的民众对现状的满意度，该数字越大，政令在该地区执行就越顺利",
+          "type": "integer"
+        }
+      }
+    },
+    "DashboardViewResponse": {
+      "fields": {
+        "id": {
+          "label": "所属势力ID",
+          "description": "所属势力ID",
+          "type": "integer"
+        },
+        "regime_name": {
+          "label": "势力名称",
+          "description": "势力名称",
+          "type": "string"
+        },
+        "current_ruler": {
+          "label": "统治者",
+          "description": "该势力的最高统治者",
+          "type": "string"
+        },
+        "province_list": {
+          "label": "控制地块",
+          "description": "该势力治下控制的省份",
+          "type": "array",
+          "ref": "DashboardProvinceDetail"
+        },
+        "total_population": {
+          "label": "总人口",
+          "description": "该势力国内所有登记在册的人口（不包括流民）",
+          "type": "integer"
+        },
+        "avg_public_sentiment": {
+          "label": "民心",
+          "description": "该势力国内的平均民心稳定度",
+          "type": "number"
+        },
+        "corruption": {
+          "label": "腐败度",
+          "description": "该势力官僚系统的腐败程度；腐败越高，就会有越多的财政损失",
+          "type": "integer"
+        },
+        "currency_policy": {
+          "label": "通货供应",
+          "description": "市场上的通货供应量，通货供应越高，百姓的粮食就能兑换更多银钱，就能上缴更多赋税。\n缺乏：赋税收入x0.6\n不足：赋税收入x0.8\n正常：赋税收入x1.0\n流通：赋税收入x1.1\n充裕：赋税收入x1.15",
+          "type": "integer"
+        },
+        "prestige": {
+          "label": "统治者权威",
+          "description": "统治者的个人威望，威望值越高，政令执行的越顺利：\n0-20：官员大多阳奉阴违，皇帝命令难以执行\n20-40：政令能得到推行，但仍会受到阻力\n40-60：皇帝的大部分政令能得到贯彻，但明显有问题的指令会被官员指出并请求三思而行\n60-80：官员大多不敢忤逆皇帝的意愿\n80-100：国家上下噤若寒蝉，惟皇帝命令是从",
+          "type": "integer"
+        },
+        "currency_status": {
+          "label": "通货供应",
+          "description": "市场上的通货供应量，通货供应越高，百姓的粮食就能兑换更多银钱，就能上缴更多赋税",
+          "type": "string"
+        },
+        "is_main": {
+          "label": "是否主势力",
+          "description": "当前MOD下的主势力",
+          "type": "boolean"
+        }
+      }
+    },
+    "OverviewResponse": {
+      "fields": {
+        "id": {
+          "label": "所属势力ID",
+          "description": "所属势力ID",
+          "type": "integer"
+        },
+        "regime_name": {
+          "label": "势力名称",
+          "description": "势力名称",
+          "type": "string"
+        },
+        "current_ruler": {
+          "label": "统治者",
+          "description": "该势力的最高统治者",
+          "type": "string"
+        },
+        "province_list": {
+          "label": "控制地块",
+          "description": "该势力治下控制的省份",
+          "type": "array",
+          "ref": "DashboardProvinceDetail"
+        },
+        "total_population": {
+          "label": "总人口",
+          "description": "该势力国内所有登记在册的人口（不包括流民）",
+          "type": "integer"
+        },
+        "avg_public_sentiment": {
+          "label": "民心",
+          "description": "该势力国内的平均民心稳定度",
+          "type": "number"
+        },
+        "corruption": {
+          "label": "腐败度",
+          "description": "该势力官僚系统的腐败程度；腐败越高，就会有越多的财政损失",
+          "type": "integer"
+        },
+        "currency_policy": {
+          "label": "通货供应",
+          "description": "市场上的通货供应量，通货供应越高，百姓的粮食就能兑换更多银钱，就能上缴更多赋税。\n缺乏：赋税收入x0.6\n不足：赋税收入x0.8\n正常：赋税收入x1.0\n流通：赋税收入x1.1\n充裕：赋税收入x1.15",
+          "type": "integer"
+        },
+        "prestige": {
+          "label": "统治者权威",
+          "description": "统治者的个人威望，威望值越高，政令执行的越顺利：\n0-20：官员大多阳奉阴违，皇帝命令难以执行\n20-40：政令能得到推行，但仍会受到阻力\n40-60：皇帝的大部分政令能得到贯彻，但明显有问题的指令会被官员指出并请求三思而行\n60-80：官员大多不敢忤逆皇帝的意愿\n80-100：国家上下噤若寒蝉，惟皇帝命令是从",
+          "type": "integer"
+        },
+        "currency_status": {
+          "label": "通货供应",
+          "description": "市场上的通货供应量，通货供应越高，百姓的粮食就能兑换更多银钱，就能上缴更多赋税",
+          "type": "string"
+        },
+        "is_main": {
+          "label": "是否主势力",
+          "description": "当前MOD下的主势力",
+          "type": "boolean"
+        },
+        "tax_configs": {
+          "label": "田亩税赋",
+          "description": "",
+          "type": "array",
+          "ref": "LandTaxConfigResponse"
+        },
+        "treasury": {
+          "label": "国库",
+          "description": "",
+          "type": "object",
+          "ref": "TreasuryDetail"
+        },
+        "privacy": {
+          "label": "内帑",
+          "description": "",
+          "type": "object",
+          "ref": "PrivacyDetail"
+        }
+      }
+    },
+    "TroopArmyBriefResponse": {
+      "fields": {
+        "code_name": {
+          "label": "军队键值",
+          "description": "该军队的唯一编号",
+          "type": "string"
+        },
+        "name": {
+          "label": "军队名称",
+          "description": "部队自定义名称",
+          "type": "string"
+        },
+        "type": {
+          "label": "部队类型",
+          "description": "陆军/海军",
+          "type": "string"
+        },
+        "exp": {
+          "label": "战斗经验",
+          "description": "该军队的作战经验；经验越高则战斗力越强，越不容易崩溃；每次作战后都会增加战斗经验，但军队伤亡补员后经验会下降",
+          "type": "integer"
+        },
+        "morale": {
+          "label": "士气",
+          "description": "士气是军队的作战决心，随着战斗进行士气会逐渐降低，一旦士气归零军队就会溃败",
+          "type": "integer"
+        },
+        "loyalty": {
+          "label": "忠诚",
+          "description": "军队的忠诚度越高，哗变和投敌的概率就越低",
+          "type": "integer"
+        },
+        "supply": {
+          "label": "补给",
+          "description": "军队的后勤补给状况。补给值越高士气上限和士气恢复速度就越高",
+          "type": "integer"
+        },
+        "extra_cost": {
+          "label": "额外花费（两/人/季度）",
+          "description": "奖赏、加薪、边军补贴、甚至是吃空饷导致的额外花费等",
+          "type": "number"
+        },
+        "salary_rate": {
+          "label": "满饷率",
+          "description": "军队实发饷银比例。若财政紧张，则不得不暂时欠饷。该值与军队的战斗力高度相关",
+          "type": "number"
+        },
+        "resource": {
+          "label": "资源",
+          "description": "该军队的资源",
+          "type": "string"
+        },
+        "id": {
+          "label": "自增ID",
+          "description": "",
+          "type": "integer"
+        },
+        "equipments": {
+          "label": "需求装备",
+          "description": "该部队所需的装备",
+          "type": "array",
+          "ref": "EquipmentResponse"
+        },
+        "total_maintenance_cost": {
+          "label": "维护费（两/季度）",
+          "description": "该军队一季度需要消耗的银钱总数",
+          "type": "number"
+        },
+        "total_strength": {
+          "label": "总人数",
+          "description": "军队的总人数",
+          "type": "integer"
+        }
+      }
+    },
+    "BuildingResponse": {
+      "fields": {
+        "code_name": {
+          "label": "建筑代号",
+          "description": "如 'building_0001'",
+          "type": "string"
+        },
+        "name": {
+          "label": "建筑名称",
+          "description": "如 '皇宫'",
+          "type": "string"
+        },
+        "build_effects": {
+          "label": "建筑效果",
+          "description": "结构化效果列表",
+          "type": "string"
+        }
+      }
+    },
+    "ProvinceDetailResponse": {
+      "fields": {
+        "land_details": {
+          "label": "田亩",
+          "description": "该省份各土地类型的面积、税率与收入明细",
+          "type": "array",
+          "ref": "LandDetailResponse"
+        },
+        "tax_shipping_liao": {
+          "label": "辽饷收入（两）",
+          "description": "该省份所征收的辽饷上缴给中央的总和",
+          "type": "number"
+        },
+        "tax_shipping_old": {
+          "label": "旧饷收入（两）",
+          "description": "该省份所征收的旧饷（包含各类军费等前朝加派的税收）上缴给中央的总和",
+          "type": "number"
+        },
+        "tax_shipping_new": {
+          "label": "新饷收入（两）",
+          "description": "该省份所征收的新饷（开始游戏之后玩家新征收的一些列税收）上缴给中央的总和",
+          "type": "number"
+        },
+        "tax_shipping_land": {
+          "label": "田赋收入（两）",
+          "description": "该省份上缴给中央的基本田税总和",
+          "type": "number"
+        },
+        "production_total": {
+          "label": "粮食产量（石）",
+          "description": "该省份一季度的粮食产量",
+          "type": "integer"
+        },
+        "production_per_capita": {
+          "label": "人均粮食产量（石/人）",
+          "description": "平均每人每季度拥有多少粮食。通常每人每季度需要1石粮食维持生活。",
+          "type": "number"
+        },
+        "code_name": {
+          "label": "地块键值",
+          "description": "省份的唯一定位代码",
+          "type": "string"
+        },
+        "name": {
+          "label": "地块名称",
+          "description": "省份的官方名称",
+          "type": "string"
+        },
+        "population": {
+          "label": "人口",
+          "description": "该省份登记在册的居民总数（不包含流民）",
+          "type": "integer"
+        },
+        "public_sentiment": {
+          "label": "民心",
+          "description": "该省份的民众对现状的满意度，该数字越大，政令在该地区执行就越顺利",
+          "type": "integer"
+        },
+        "rebellion_risk": {
+          "label": "动乱",
+          "description": "该省份的动乱程度，该数字越大，就越有可能生成叛军，并破坏生产",
+          "type": "integer"
+        },
+        "yield_mu": {
+          "label": "粮食亩产（石/季度）",
+          "description": "该省份每亩每季度能够生产多少石粮食",
+          "type": "number"
+        },
+        "other_tax": {
+          "label": "其它税收（两）",
+          "description": "其他无法归类的税收",
+          "type": "integer"
+        },
+        "tax_coef": {
+          "label": "税收倍率",
+          "description": "依据朝廷政策为诸省份设定的或减免或加赋的倍率（0.5为正常）",
+          "type": "number"
+        },
+        "disaster_status": {
+          "label": "当前灾害",
+          "description": "该省份目前的灾情种类",
+          "type": "string"
+        },
+        "disaster_level": {
+          "label": "灾害严重等级",
+          "description": "该省份当前灾情的严重等级",
+          "type": "string"
+        },
+        "defence_level": {
+          "label": "城防等级",
+          "description": "该地区城池和要塞的坚固程度，最高为10.没有足够的火炮和步兵将无法夺取高城防的地块",
+          "type": "integer"
+        },
+        "tax_efficiency_rate": {
+          "label": "税收完成率",
+          "description": "对税收计划的完成率，反映了中央政府对当地的行政掌控力。当税收完成率为50%时，说明应缴的100两税收只收缴了50两",
+          "type": "number"
+        },
+        "description": {
+          "label": "描述",
+          "description": "地区的解释",
+          "type": "string"
+        },
+        "id": {
+          "label": "省份ID",
+          "description": "省份ID",
+          "type": "integer"
+        },
+        "has_full_data": {
+          "label": "信息是否完整",
+          "description": "该省份的信息是否完整",
+          "type": "boolean"
+        },
+        "regime": {
+          "label": "所属势力信息",
+          "description": "该省份隶属于的势力信息",
+          "type": "object",
+          "ref": "DashboardViewResponse"
+        },
+        "troops": {
+          "label": "驻扎的部队",
+          "description": "驻扎在该省份的部队列表",
+          "type": "array",
+          "ref": "TroopArmyBriefResponse"
+        },
+        "buildings": {
+          "label": "建筑列表",
+          "description": "该省份下的建筑列表",
+          "type": "array",
+          "ref": "BuildingResponse"
+        },
+        "is_main": {
+          "label": "是否为主朝代",
+          "description": "该省份是否隶属于是否为主朝代",
+          "type": "boolean"
+        },
+        "tax_total": {
+          "label": "总收入税银（两）",
+          "description": "该省份除去自用部分后上交给中央的全部税银总和",
+          "type": "number"
+        },
+        "regime_id": {
+          "label": "所属势力键值",
+          "description": "该省份隶属于哪一个势力",
+          "type": "string"
+        },
+        "tax_rate": {
+          "label": "税收倍率",
+          "description": "依据朝廷政策为诸省份设定的或减免或加赋的倍率（0.5为正常）",
+          "type": "string"
+        },
+        "tax_efficiency": {
+          "label": "税收完成率",
+          "description": "对税收计划的完成率，反映了中央政府对当地的行政掌控力。当税收完成率为50%时，说明应缴的100两税收只收缴了50两",
+          "type": "string"
+        },
+        "is_coastal": {
+          "label": "是否沿海",
+          "description": "不沿海的省份不会发生海啸，也无法驻扎海军",
+          "type": "string"
+        }
+      }
+    },
+    "buildings": {
+      "fields": {
+        "code_name": {
+          "label": "主键",
+          "description": "建筑唯一编号",
+          "type": "string"
+        },
+        "name": {
+          "label": "建筑名称",
+          "description": "建筑名称",
+          "type": "string"
+        },
+        "building_location": {
+          "label": "建筑所在地",
+          "description": "建筑位于的省份",
+          "type": "string"
+        },
+        "build_effects": {
+          "label": "建筑效果",
+          "description": "建筑造成的效果（可多个）",
+          "type": "string"
+        }
+      }
+    },
+    "events_prediction": {
+      "fields": {
+        "code_name": {
+          "label": "事件ID",
+          "description": "事件唯一标识",
+          "type": "string"
+        },
+        "predicted_occurrence_time": {
+          "label": "预测发生时间",
+          "description": "预测会发生在的时间，例如崇祯x年x季",
+          "type": "string"
+        },
+        "predicted_occurrence_turn": {
+          "label": "预测发生回合",
+          "description": "int",
+          "type": "string"
+        },
+        "content": {
+          "label": "事件内容",
+          "description": "str",
+          "type": "string"
+        }
+      }
+    },
+    "initial_tasks": {
+      "fields": {
+        "title": {
+          "label": "任务标题",
+          "description": "None",
+          "type": "string"
+        },
+        "body": {
+          "label": "任务内容",
+          "description": "None",
+          "type": "string"
+        },
+        "solution_summary": {
+          "label": "任务目标",
+          "description": "None",
+          "type": "string"
+        }
+      }
+    },
+    "minister_assets": {
+      "fields": {
+        "name": {
+          "label": "姓名拼音",
+          "description": "标记拥有特殊立绘的人物",
+          "type": "string"
+        }
+      }
+    },
+    "normal_events": {
+      "fields": {
+        "code_name": {
+          "label": "事件ID",
+          "description": "None",
+          "type": "string"
+        },
+        "name": {
+          "label": "事件名称",
+          "description": "None",
+          "type": "string"
+        },
+        "description": {
+          "label": "事件描述",
+          "description": "None",
+          "type": "string"
+        },
+        "effect_text": {
+          "label": "效果文本",
+          "description": "None",
+          "type": "string"
+        },
+        "category": {
+          "label": "事件类型",
+          "description": "None",
+          "type": "string"
+        }
+      }
+    },
+    "perks_table": {
+      "fields": {
+        "code_name": {
+          "label": "国策键值",
+          "description": "国策的唯一键",
+          "type": "string"
+        },
+        "category": {
+          "label": "国策类型",
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "label": "国策名称",
+          "description": "国策中文名",
+          "type": "string"
+        },
+        "prerequisites": {
+          "label": "国策前置",
+          "description": "所有前置解锁条件",
+          "type": "string"
+        },
+        "main_prerequisite": {
+          "label": "主要前置",
+          "description": "连线的解锁条件",
+          "type": "string"
+        },
+        "description": {
+          "label": "国策描述",
+          "description": "",
+          "type": "string"
+        },
+        "current_turn_effect": {
+          "label": "立即影响编码",
+          "description": "一次性改变数值的硬编码",
+          "type": "string"
+        },
+        "effect_display": {
+          "label": "立即影响文本",
+          "description": "展示的效果文本",
+          "type": "string"
+        },
+        "context_text": {
+          "label": "立即影响提示词",
+          "description": "拼接入下一回合行动的提示词",
+          "type": "string"
+        },
+        "long_term_prompt": {
+          "label": "长期影响提示词",
+          "description": "拼接进入国策长期修正的提示词",
+          "type": "string"
+        }
+      }
+    },
+    "player_attributes_init_table": {
+      "fields": {
+        "attr_id": {
+          "label": "属性序号",
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "label": "属性名称",
+          "description": "",
+          "type": "string"
+        },
+        "value": {
+          "label": "属性值",
+          "description": "初始配置",
+          "type": "string"
+        }
+      }
+    },
+    "province_land_holdings": {
+      "fields": {
+        "code_name": {
+          "label": "主键",
+          "description": "唯一主键",
+          "type": "string"
+        },
+        "province_code": {
+          "label": "省份ID",
+          "description": "关联的省份",
+          "type": "string"
+        },
+        "land_type_code": {
+          "label": "持有ID",
+          "description": "持有的类型",
+          "type": "string"
+        },
+        "area_mu": {
+          "label": "数量",
+          "description": "持有的数量",
+          "type": "string"
+        }
+      }
+    },
+    "random_events": {
+      "fields": {
+        "code_name": {
+          "label": "事件ID",
+          "description": "None",
+          "type": "string"
+        },
+        "title": {
+          "label": "事件标题",
+          "description": "",
+          "type": "string"
+        },
+        "description": {
+          "label": "事件描述",
+          "description": "",
+          "type": "string"
+        },
+        "cleaned_condition": {
+          "label": "触发前提",
+          "description": "",
+          "type": "string"
+        },
+        "c1_content": {
+          "label": "选项1内容",
+          "description": "",
+          "type": "string"
+        },
+        "c1_display": {
+          "label": "选项1效果文本",
+          "description": "",
+          "type": "string"
+        },
+        "cleaned_c1_effect": {
+          "label": "选项1效果编码",
+          "description": "",
+          "type": "string"
+        },
+        "c2_content": {
+          "label": "选项2内容",
+          "description": "",
+          "type": "string"
+        },
+        "c2_display": {
+          "label": "选项2效果文本",
+          "description": "",
+          "type": "string"
+        },
+        "cleaned_c2_effect": {
+          "label": "选项2效果编码",
+          "description": "",
+          "type": "string"
+        },
+        "c3_content": {
+          "label": "选项3内容",
+          "description": "",
+          "type": "string"
+        },
+        "c3_display": {
+          "label": "选项3效果文本",
+          "description": "",
+          "type": "string"
+        },
+        "cleaned_c3_effect": {
+          "label": "选项3效果编码",
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "random_events_chain": {
+      "fields": {
+        "code_name": {
+          "label": "事件ID",
+          "description": "None",
+          "type": "string"
+        },
+        "title": {
+          "label": "事件标题",
+          "description": "",
+          "type": "string"
+        },
+        "description": {
+          "label": "事件描述",
+          "description": "",
+          "type": "string"
+        },
+        "cleaned_condition": {
+          "label": "触发前提",
+          "description": "",
+          "type": "string"
+        },
+        "c1_content": {
+          "label": "选项1内容",
+          "description": "",
+          "type": "string"
+        },
+        "c1_display": {
+          "label": "选项1效果文本",
+          "description": "",
+          "type": "string"
+        },
+        "cleaned_c1_effect": {
+          "label": "选项1效果编码",
+          "description": "",
+          "type": "string"
+        },
+        "c2_content": {
+          "label": "选项2内容",
+          "description": "",
+          "type": "string"
+        },
+        "c2_display": {
+          "label": "选项2效果文本",
+          "description": "",
+          "type": "string"
+        },
+        "cleaned_c2_effect": {
+          "label": "选项2效果编码",
+          "description": "",
+          "type": "string"
+        },
+        "c3_content": {
+          "label": "选项3内容",
+          "description": "",
+          "type": "string"
+        },
+        "c3_display": {
+          "label": "选项3效果文本",
+          "description": "",
+          "type": "string"
+        },
+        "cleaned_c3_effect": {
+          "label": "选项3效果编码",
+          "description": "",
+          "type": "string"
+        }
+      }
+    },
+    "recommend": {
+      "fields": {
+        "code_name": {
+          "label": "举荐ID",
+          "description": "",
+          "type": "string"
+        },
+        "name": {
+          "label": "举荐姓名",
+          "description": "",
+          "type": "string"
+        },
+        "recommend_round": {
+          "label": "触发回合",
+          "description": "自动±2回合随机偏移",
+          "type": "string"
+        },
+        "recommend_text": {
+          "label": "举荐文本",
+          "description": "",
+          "type": "string"
+        },
+        "option_display": {
+          "label": "选项文本",
+          "description": "",
+          "type": "string"
+        },
+        "option_effect": {
+          "label": "举荐效果",
+          "description": "硬编码写入",
+          "type": "string"
+        }
+      }
+    },
+    "special_simulations": {
+      "fields": {
+        "turn_number": {
+          "label": "触发时间",
+          "description": "None",
+          "type": "string"
+        },
+        "title": {
+          "label": "标题",
+          "description": "None",
+          "type": "string"
+        },
+        "content": {
+          "label": "内容",
+          "description": "None",
+          "type": "string"
+        },
+        "is_active": {
+          "label": "是否启用",
+          "description": "None",
+          "type": "string"
+        }
+      }
+    },
+    "super_events": {
+      "fields": {
+        "code_name": {
+          "label": "超事件ID",
+          "description": "None",
+          "type": "string"
+        },
+        "title": {
+          "label": "超事件标题",
+          "description": "None",
+          "type": "string"
+        },
+        "description": {
+          "label": "超事件描述",
+          "description": "None",
+          "type": "string"
+        },
+        "cleaned_condition": {
+          "label": "触发条件",
+          "description": "None",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

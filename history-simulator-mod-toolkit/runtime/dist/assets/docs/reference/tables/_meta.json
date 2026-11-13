@@ -1,0 +1,171 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "如何阅读与依赖总览"
+  },
+  {
+    "type": "section-header",
+    "label": "第 0 层"
+  },
+  {
+    "type": "file",
+    "name": "regimes",
+    "label": "政权"
+  },
+  {
+    "type": "file",
+    "name": "parties",
+    "label": "党派"
+  },
+  {
+    "type": "file",
+    "name": "social_classes",
+    "label": "社会阶层"
+  },
+  {
+    "type": "file",
+    "name": "land_tax_configs",
+    "label": "土地税率"
+  },
+  {
+    "type": "file",
+    "name": "equipments",
+    "label": "装备"
+  },
+  {
+    "type": "file",
+    "name": "ship_configs",
+    "label": "船只配置"
+  },
+  {
+    "type": "file",
+    "name": "special_simulations",
+    "label": "特殊推演"
+  },
+  {
+    "type": "file",
+    "name": "initial_tasks",
+    "label": "初始任务"
+  },
+  {
+    "type": "file",
+    "name": "events_prediction",
+    "label": "事件预测表"
+  },
+  {
+    "type": "file",
+    "name": "player_attributes_init_table",
+    "label": "玩家初始属性"
+  },
+  {
+    "type": "section-header",
+    "label": "第 1 层"
+  },
+  {
+    "type": "file",
+    "name": "ministers",
+    "label": "大臣"
+  },
+  {
+    "type": "file",
+    "name": "arm_configs",
+    "label": "兵种配置"
+  },
+  {
+    "type": "file",
+    "name": "recommend_ministers",
+    "label": "举荐大臣"
+  },
+  {
+    "type": "section-header",
+    "label": "第 2 层"
+  },
+  {
+    "type": "file",
+    "name": "provinces",
+    "label": "省份"
+  },
+  {
+    "type": "file",
+    "name": "province_land_holdings",
+    "label": "省份土地"
+  },
+  {
+    "type": "file",
+    "name": "recommend_base",
+    "label": "举荐基础数据"
+  },
+  {
+    "type": "section-header",
+    "label": "第 3 层"
+  },
+  {
+    "type": "file",
+    "name": "buildings",
+    "label": "建筑"
+  },
+  {
+    "type": "file",
+    "name": "troops",
+    "label": "军队"
+  },
+  {
+    "type": "file",
+    "name": "finances",
+    "label": "财政值"
+  },
+  {
+    "type": "section-header",
+    "label": "第 4 层"
+  },
+  {
+    "type": "file",
+    "name": "normal_events",
+    "label": "常规事件"
+  },
+  {
+    "type": "file",
+    "name": "random_events",
+    "label": "随机事件"
+  },
+  {
+    "type": "file",
+    "name": "fixed_turn_events",
+    "label": "固定回合事件"
+  },
+  {
+    "type": "file",
+    "name": "game_state_rules",
+    "label": "信息感知"
+  },
+  {
+    "type": "file",
+    "name": "random_events_chain",
+    "label": "链式随机事件"
+  },
+  {
+    "type": "file",
+    "name": "super_events",
+    "label": "超事件"
+  },
+  {
+    "type": "file",
+    "name": "decisions",
+    "label": "决议事件"
+  },
+  {
+    "type": "file",
+    "name": "perks_table",
+    "label": "国策树"
+  },
+  {
+    "type": "section-header",
+    "label": "自动生成"
+  },
+  {
+    "type": "file",
+    "name": "derived-tables",
+    "label": "2 张派生表"
+  }
+]

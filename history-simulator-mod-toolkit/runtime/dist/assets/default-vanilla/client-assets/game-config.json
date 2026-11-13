@@ -1,0 +1,22 @@
+{
+  "eras": [
+    {
+      "fromTurn": 1,
+      "eraName": "崇祯",
+      "startYear": 1,
+      "yearOrder": "ascending"
+    }
+  ],
+  "seasons": [
+    "春",
+    "夏",
+    "秋",
+    "冬"
+  ],
+  "numberSystem": "chinese",
+  "turnFormat": "{eraName}{year}年{season}",
+  "preGameTurns": {
+    "-1": "天启七年秋",
+    "0": "天启七年冬"
+  }
+}

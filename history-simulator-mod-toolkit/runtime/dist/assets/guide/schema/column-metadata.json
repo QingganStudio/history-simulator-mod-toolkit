@@ -1,0 +1,1376 @@
+{
+  "arm_configs": {
+    "code_name": {
+      "display_name": "兵种键值",
+      "english_name": "code_name",
+      "description": "兵种的唯一代码",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "兵种名称",
+      "english_name": "name",
+      "description": "兵种的称呼",
+      "mapping_name": ""
+    },
+    "maintenance_cost": {
+      "display_name": "维护费（两/季度）",
+      "english_name": "maintenance_cost",
+      "description": "该兵种正常情况下一季度的耗费（包括饷银、武器损耗等）",
+      "mapping_name": ""
+    },
+    "equipment_requirements": {
+      "display_name": "需求装备",
+      "english_name": "arm_equip",
+      "description": "该兵种需要的装备",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "描述",
+      "english_name": "description",
+      "description": "该兵种的简介",
+      "mapping_name": ""
+    }
+  },
+  "equipments": {
+    "code_name": {
+      "display_name": "装备键值",
+      "english_name": "code_name",
+      "description": "该种装备唯一代码",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "装备名称",
+      "english_name": "name",
+      "description": "该装备名称",
+      "mapping_name": ""
+    },
+    "stock_count": {
+      "display_name": "库存数量",
+      "english_name": "stock_count",
+      "description": "该种装备在库房中的现有存量",
+      "mapping_name": ""
+    },
+    "annual_output": {
+      "display_name": "季度产量",
+      "english_name": "annual_output",
+      "description": "该种装备每季度的产量",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "描述",
+      "english_name": "description",
+      "description": "装备描述和简介",
+      "mapping_name": ""
+    }
+  },
+  "finances": {
+    "current_turn": {
+      "display_name": "当前回合",
+      "english_name": "current_turn",
+      "description": "该行财政数据对应的回合；只读整数，由编辑器维护，默认 1。",
+      "mapping_name": ""
+    },
+    "treasury": {
+      "display_name": "国库余额（两）",
+      "english_name": "treasury",
+      "description": "大明国库的库存银两，保持一定的库存额将有助于应对突发灾情",
+      "mapping_name": ""
+    },
+    "salt_tea_tax": {
+      "display_name": "盐茶课（两）",
+      "english_name": "salt_tea_tax",
+      "description": "商人贩卖茶盐，须向官方购买“引”作为许可和凭证",
+      "mapping_name": ""
+    },
+    "transport_tax": {
+      "display_name": "船钞商课（两）",
+      "english_name": "transport_tax",
+      "description": "各水运要道设有“钞关”，船只往来通行需纳税；另外小贩摆摊和市场交易都需要缴纳较低的税费。",
+      "mapping_name": ""
+    },
+    "ore_tax": {
+      "display_name": "矿业收入（两）",
+      "english_name": "ore_tax",
+      "description": "高产量的金银矿由官方直接开采作为收入；而低产量金银矿则准许民间开采，朝廷抽取一定的“矿课”作为税费",
+      "mapping_name": ""
+    },
+    "other_treasury_income": {
+      "display_name": "杂项收入（两）",
+      "english_name": "other_treasury_income",
+      "description": "各类繁杂细小税务名目",
+      "mapping_name": ""
+    },
+    "salary_cost": {
+      "display_name": "宗室供奉（两）",
+      "english_name": "salary_cost",
+      "description": "依据大明祖制每季度发放给庞大的皇室宗亲群体的供养费用。",
+      "mapping_name": ""
+    },
+    "official_salary": {
+      "display_name": "文官俸禄（两）",
+      "english_name": "official_salary",
+      "description": "每季度发放给全国数万名朝廷命官的俸禄。如果俸禄过低，这些官员就不得不依靠灰色收入维持生活",
+      "mapping_name": ""
+    },
+    "other_treasury_cost": {
+      "display_name": "杂项支出（两）",
+      "english_name": "other_treasury_cost",
+      "description": "本季度度各类繁杂名目的支出总额",
+      "mapping_name": ""
+    },
+    "privacy": {
+      "display_name": "内帑余额（两）",
+      "english_name": "privacy",
+      "description": "内帑是皇帝的私人金库，于国库和官方财政分开运行。内帑多用于皇帝的个人开销",
+      "mapping_name": ""
+    },
+    "trade_tax": {
+      "display_name": "商业税收入（两）",
+      "english_name": "trade_tax",
+      "description": "由宦官在各地通过搜刮商贾，拦截道路，强买强卖，垄断居奇等一系列手段为皇帝搜刮得来的商业收入。\n这项收入严重打击了明朝的商业贸易。",
+      "mapping_name": ""
+    },
+    "jinhua_tax": {
+      "display_name": "金花银（两）",
+      "english_name": "jinhua_tax",
+      "description": "江南诸省上缴的部分粮税折算成白银后充入皇室内库",
+      "mapping_name": ""
+    },
+    "imperial_work_income": {
+      "display_name": "皇庄产业收入（两）",
+      "english_name": "imperial_work_income",
+      "description": "皇庄中的一些手工产业带来的收入",
+      "mapping_name": ""
+    },
+    "taipusi_silver_income": {
+      "display_name": "太仆寺马价银（两）",
+      "english_name": "taipusi_silver_income",
+      "description": "太仆寺负责各地马政，每季度从各地收取马匹。随着民间养马日渐困难。政府逐渐允许马户不再上交实物马驹，而是按照市场价或官定价，直接缴纳银两，由官方统一去边境买马。\n然而最终这笔钱的去向成为了皇帝私库",
+      "mapping_name": ""
+    },
+    "other_privacy_income": {
+      "display_name": "内帑其他收入（两）",
+      "english_name": "other_privacy_income",
+      "description": "内帑其它名目繁多的收入",
+      "mapping_name": ""
+    },
+    "palace_cost": {
+      "display_name": "内宫用度（两）",
+      "english_name": "palace_cost",
+      "description": "庞大的宫殿中各近臣侍从嫔妃等的日常吃穿用度及俸禄",
+      "mapping_name": ""
+    },
+    "guard_cost": {
+      "display_name": "武将及亲卫支出（两）",
+      "english_name": "guard_cost",
+      "description": "贴身禁卫、东西厂、锦衣卫的开销。以及全国武将的俸禄都由内帑支出。",
+      "mapping_name": ""
+    },
+    "engineering_cost": {
+      "display_name": "皇家工程（两）",
+      "english_name": "engineering_cost",
+      "description": "宫殿修缮和陵寝修建。\n崇祯初季度因财政困顿未进行陵寝修建。但此举也向外透露出大明的虚弱，削弱了国民信心和皇帝权威",
+      "mapping_name": ""
+    },
+    "other_privacy_cost": {
+      "display_name": "内帑其他支出（两）",
+      "english_name": "other_privacy_cost",
+      "description": "内帑其它繁杂名目支出",
+      "mapping_name": ""
+    }
+  },
+  "land_tax_configs": {
+    "code_name": {
+      "display_name": "主键",
+      "english_name": "code_name",
+      "description": "田税唯一代码",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "田亩种类",
+      "english_name": "name",
+      "description": "不同田亩的基础税费是不同的",
+      "mapping_name": ""
+    },
+    "tax_base": {
+      "display_name": "基本田赋（两/亩/季度）",
+      "english_name": "tax_base",
+      "description": "最基础的粮食税及实物税折银后所征，明朝开国时承诺“永不加赋”。",
+      "mapping_name": ""
+    },
+    "tax_liao": {
+      "display_name": "辽饷（两/亩/季度）",
+      "english_name": "tax_liao",
+      "description": "朝廷为应对后金威胁所加征的税费，主要用于辽东军需",
+      "mapping_name": ""
+    },
+    "tax_old": {
+      "display_name": "旧饷（两/亩/季度）",
+      "english_name": "tax_old",
+      "description": "虽称永不加赋，但此后根据财政需要又另起的各类税费名目。",
+      "mapping_name": ""
+    },
+    "tax_new": {
+      "display_name": "新饷（两/亩/季度）",
+      "english_name": "tax_new",
+      "description": "崇祯朝以来所新加派的赋税",
+      "mapping_name": ""
+    },
+    "is_royal": {
+      "display_name": "是否皇室",
+      "english_name": "is_royal",
+      "description": "True=收入归内帑，False=收入归国库",
+      "mapping_name": ""
+    }
+  },
+  "ministers": {
+    "party_id": {
+      "display_name": "党派键值",
+      "english_name": "party_id",
+      "description": "大臣所属的党派",
+      "mapping_name": ""
+    },
+    "code_name": {
+      "display_name": "大臣键值",
+      "english_name": "code_name",
+      "description": "大臣的唯一代码",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "姓名",
+      "english_name": "name",
+      "description": "大臣的姓名",
+      "mapping_name": ""
+    },
+    "position": {
+      "display_name": "官职",
+      "english_name": "position",
+      "description": "大臣的官职\n(可以有多个）",
+      "mapping_name": ""
+    },
+    "stance": {
+      "display_name": "政治立场",
+      "english_name": "stance",
+      "description": "大臣所持的政治立场。\n利己派： 无论改革与否，只追求一己私利\n皇权派：追求加强皇权，遵从皇帝的决策\n保守派：反对过激的改革，力求维持现状\n改革派：主张用新政和新技术挽救大明",
+      "mapping_name": ""
+    },
+    "prompt": {
+      "display_name": "提示词",
+      "english_name": "prompt",
+      "description": "为Agent扮演大臣的提示词",
+      "mapping_name": ""
+    },
+    "influence": {
+      "display_name": "影响力",
+      "english_name": "influence",
+      "description": "大臣在朝野中的影响力",
+      "mapping_name": ""
+    },
+    "gender": {
+      "display_name": "性别",
+      "english_name": "gender",
+      "description": "大臣的性别",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "简介",
+      "english_name": "description",
+      "description": "大臣生平介绍",
+      "mapping_name": ""
+    },
+    "is_visible": {
+      "display_name": "是否可见",
+      "english_name": "is_visible",
+      "description": "是否在游戏中显示该大臣；必填布尔值。",
+      "mapping_name": ""
+    },
+    "is_alive": {
+      "display_name": "是否存活",
+      "english_name": "is_alive",
+      "description": "True为存活False为死亡",
+      "mapping_name": ""
+    },
+    "is_system": {
+      "display_name": "是否玩家创建",
+      "english_name": "is_system",
+      "description": "True表示为玩家下令后自动创建的；False表示预先配置的",
+      "mapping_name": ""
+    }
+  },
+  "parties": {
+    "code_name": {
+      "display_name": "党派键值",
+      "english_name": "code_name",
+      "description": "该党派的唯一代码",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "党派名称",
+      "english_name": "name",
+      "description": "该党派的名称",
+      "mapping_name": ""
+    },
+    "satisfaction": {
+      "display_name": "党派满意度",
+      "english_name": "satisfaction",
+      "description": "该党派整体对皇帝和当前现状的满意度。满意度越高，他们越可能自发支持您的政令，反之将会阻挠您的命令",
+      "mapping_name": ""
+    },
+    "influence": {
+      "display_name": "党派影响力",
+      "english_name": "influence",
+      "description": "该党派在帝国中的影响力，指代其掌握的帝国各行业命脉和盘根错节的利益网络。如果阶层的影响力较高，他们就能根据满意度和叛乱风险进行卓有成效的行动；如果影响力较低，无论他们的满意度和叛乱风险如何，都掀不起什么风浪。",
+      "mapping_name": ""
+    },
+    "rebellion_risk": {
+      "display_name": "叛乱风险",
+      "english_name": "rebellion_risk",
+      "description": "该党派的叛乱风险。叛乱风险越高，他们越可能造反，具体到党派上，东林党可能会勾结江南士绅甚至西洋人违抗朝廷；而阉党则可能会秘密谋害皇帝",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "描述",
+      "english_name": "description",
+      "description": "对该党派的描述",
+      "mapping_name": ""
+    }
+  },
+  "provinces": {
+    "regime_id": {
+      "display_name": "所属势力键值",
+      "english_name": "regime_id",
+      "description": "该省份隶属于哪一个势力",
+      "mapping_name": ""
+    },
+    "code_name": {
+      "display_name": "地块键值",
+      "english_name": "code_name",
+      "description": "省份的唯一定位代码",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "地块名称",
+      "english_name": "name",
+      "description": "省份的官方名称",
+      "mapping_name": ""
+    },
+    "population": {
+      "display_name": "人口",
+      "english_name": "population",
+      "description": "该省份登记在册的居民总数（不包含流民）",
+      "mapping_name": ""
+    },
+    "public_sentiment": {
+      "display_name": "民心",
+      "english_name": "public_sentiment",
+      "description": "该省份的民众对现状的满意度，该数字越大，政令在该地区执行就越顺利",
+      "mapping_name": ""
+    },
+    "rebellion_risk": {
+      "display_name": "动乱",
+      "english_name": "rebellion_risk",
+      "description": "该省份的动乱程度，该数字越大，就越有可能生成叛军，并破坏生产",
+      "mapping_name": ""
+    },
+    "yield_mu": {
+      "display_name": "粮食亩产（石/季度）",
+      "english_name": "yield_mu",
+      "description": "该省份每亩每季度能够生产多少石粮食",
+      "mapping_name": ""
+    },
+    "tax_rate": {
+      "display_name": "税收倍率",
+      "english_name": "tax_rate",
+      "description": "依据朝廷政策为诸省份设定的或减免或加赋的倍率（0.5为正常）",
+      "mapping_name": ""
+    },
+    "other_tax": {
+      "display_name": "其它税收（两）",
+      "english_name": "other_tax",
+      "description": "其他无法归类的税收",
+      "mapping_name": ""
+    },
+    "disaster_status": {
+      "display_name": "当前灾害",
+      "english_name": "disaster_status",
+      "description": "该省份目前的灾情种类",
+      "mapping_name": ""
+    },
+    "disaster_level": {
+      "display_name": "灾害严重等级",
+      "english_name": "disaster_level",
+      "description": "该省份当前灾情的严重等级",
+      "mapping_name": ""
+    },
+    "defence_level": {
+      "display_name": "城防等级",
+      "english_name": "defence_level",
+      "description": "该地区城池和要塞的坚固程度，最高为10.没有足够的火炮和步兵将无法夺取高城防的地块",
+      "mapping_name": ""
+    },
+    "tax_efficiency": {
+      "display_name": "税收完成率",
+      "english_name": "tax_efficiency",
+      "description": "对税收计划的完成率，反映了中央政府对当地的行政掌控力。当税收完成率为50%时，说明应缴的100两税收只收缴了50两",
+      "mapping_name": ""
+    },
+    "is_coastal": {
+      "display_name": "是否沿海",
+      "english_name": "is_coastal",
+      "description": "不沿海的省份不会发生海啸，也无法驻扎海军",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "描述",
+      "english_name": "description",
+      "description": "地区的解释",
+      "mapping_name": ""
+    }
+  },
+  "random_events": {
+    "code_name": {
+      "display_name": "事件 key",
+      "english_name": "code_name",
+      "description": "随机事件的唯一编号",
+      "mapping_name": ""
+    },
+    "title": {
+      "display_name": "事件标题",
+      "english_name": "title",
+      "description": "事件标题",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "事件文本",
+      "english_name": "description",
+      "description": "事件描述文本",
+      "mapping_name": ""
+    },
+    "cleaned_condition": {
+      "display_name": "触发条件",
+      "english_name": "cleaned_condition",
+      "description": "触发条件的结构化 JSON",
+      "mapping_name": ""
+    },
+    "c1_content": {
+      "display_name": "选项1 内容",
+      "english_name": "c1_content",
+      "description": "选项1 的内容文本",
+      "mapping_name": ""
+    },
+    "c1_display": {
+      "display_name": "选项1 展示",
+      "english_name": "c1_display",
+      "description": "选项1 的效果展示文本",
+      "mapping_name": ""
+    },
+    "cleaned_c1_effect": {
+      "display_name": "选项1 效果",
+      "english_name": "cleaned_c1_effect",
+      "description": "选项1 的结构化效果 JSON",
+      "mapping_name": ""
+    },
+    "c2_content": {
+      "display_name": "选项2 内容",
+      "english_name": "c2_content",
+      "description": "选项2 的内容文本",
+      "mapping_name": ""
+    },
+    "c2_display": {
+      "display_name": "选项2 展示",
+      "english_name": "c2_display",
+      "description": "选项2 的效果展示文本",
+      "mapping_name": ""
+    },
+    "cleaned_c2_effect": {
+      "display_name": "选项2 效果",
+      "english_name": "cleaned_c2_effect",
+      "description": "选项2 的结构化效果 JSON",
+      "mapping_name": ""
+    },
+    "c3_content": {
+      "display_name": "选项3 内容",
+      "english_name": "c3_content",
+      "description": "选项3 的内容文本",
+      "mapping_name": ""
+    },
+    "c3_display": {
+      "display_name": "选项3 展示",
+      "english_name": "c3_display",
+      "description": "选项3 的效果展示文本",
+      "mapping_name": ""
+    },
+    "cleaned_c3_effect": {
+      "display_name": "选项3 效果",
+      "english_name": "cleaned_c3_effect",
+      "description": "选项3 的结构化效果 JSON",
+      "mapping_name": ""
+    }
+  },
+  "regimes": {
+    "code_name": {
+      "display_name": "势力键值",
+      "english_name": "code_name",
+      "description": "代表该势力的唯一编号",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "势力名称",
+      "english_name": "name",
+      "description": "该势力的名称",
+      "mapping_name": ""
+    },
+    "current_ruler": {
+      "display_name": "统治者",
+      "english_name": "current_ruler",
+      "description": "该势力的最高统治者",
+      "mapping_name": ""
+    },
+    "corruption": {
+      "display_name": "腐败度",
+      "english_name": "corruption",
+      "description": "该势力官僚系统的腐败程度；腐败越高，就会有越多的财政损失",
+      "mapping_name": ""
+    },
+    "prestige": {
+      "display_name": "统治者权威",
+      "english_name": "prestige",
+      "description": "统治者的个人威望，威望值越高，政令执行的越顺利：\n0-20：官员大多阳奉阴违，皇帝命令难以执行\n20-40：政令能得到推行，但仍会受到阻力\n40-60：皇帝的大部分政令能得到贯彻，但明显有问题的指令会被官员指出并请求三思而行\n60-80：官员大多不敢忤逆皇帝的意愿\n80-100：国家上下噤若寒蝉，惟皇帝命令是从",
+      "mapping_name": ""
+    },
+    "currency_policy": {
+      "display_name": "通货供应",
+      "english_name": "currency_policy",
+      "description": "市场上的通货供应量，通货供应越高，百姓的粮食就能兑换更多银钱，就能上缴更多赋税。\n缺乏：赋税收入x0.6\n不足：赋税收入x0.8\n正常：赋税收入x1.0\n流通：赋税收入x1.1\n充裕：赋税收入x1.15",
+      "mapping_name": ""
+    }
+  },
+  "ship_configs": {
+    "code_name": {
+      "display_name": "船种键值",
+      "english_name": "code_name",
+      "description": "此种舰船的唯一编号",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "船种名称",
+      "english_name": "name",
+      "description": "此种舰船名称",
+      "mapping_name": ""
+    },
+    "crew_count": {
+      "display_name": "船员人数",
+      "english_name": "crew_count",
+      "description": "该船种的船员人数；可选整数，最小 0。",
+      "mapping_name": ""
+    },
+    "light_cannon_count": {
+      "display_name": "轻型舰炮数量",
+      "english_name": "light_cannon_count",
+      "description": "此种舰船装备的轻型火炮（如弗朗机火炮和千斤发熕等）",
+      "mapping_name": ""
+    },
+    "heavy_cannon_count": {
+      "display_name": "重型舰炮数量",
+      "english_name": "heavy_cannon_count",
+      "description": "此种舰炮装备的重型火炮（如红夷大炮等）",
+      "mapping_name": ""
+    },
+    "maintenance_cost": {
+      "display_name": "维护费（两/季度）",
+      "english_name": "maintenance_cost",
+      "description": "该艘舰船及水手每季度耗费的银两",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "描述",
+      "english_name": "description",
+      "description": "对舰船的简介",
+      "mapping_name": ""
+    }
+  },
+  "social_classes": {
+    "code_name": {
+      "display_name": "阶层键值",
+      "english_name": "code_name",
+      "description": "该阶层唯一编号",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "阶层名称",
+      "english_name": "name",
+      "description": "该阶层名称",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "描述",
+      "english_name": "description",
+      "description": "对该阶层的描述",
+      "mapping_name": ""
+    },
+    "satisfaction": {
+      "display_name": "满意度",
+      "english_name": "satisfaction",
+      "description": "该阶层整体对皇帝和当前现状的满意度。满意度越高，他们越可能自发支持您的政令，反之将会阻挠您的命令",
+      "mapping_name": ""
+    },
+    "influence": {
+      "display_name": "整体影响力",
+      "english_name": "influence",
+      "description": "该阶层在帝国中的影响力，指代其掌握的帝国各行业命脉和盘根错节的利益网络。如果阶层的影响力较高，他们就能根据满意度和叛乱风险进行卓有成效的行动；如果影响力较低，无论他们的满意度和叛乱风险如何，都掀不起什么风浪。",
+      "mapping_name": ""
+    },
+    "rebellion_risk": {
+      "display_name": "叛乱风险",
+      "english_name": "rebellion_risk",
+      "description": "该阶层的叛乱风险。叛乱风险越高，他们越可能造反，具体到阶层上，士绅可能会结镇抗税、农民可能会起义，军队可能会哗变，而宦官可能会密谋暗杀皇帝。",
+      "mapping_name": ""
+    }
+  },
+  "super_events": {
+    "code_name": {
+      "display_name": "事件ID",
+      "english_name": "code_name",
+      "description": "超事件的唯一编号",
+      "mapping_name": ""
+    },
+    "title": {
+      "display_name": "标题",
+      "english_name": "title",
+      "description": "事件标题",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "描述",
+      "english_name": "description",
+      "description": "事件描述文本",
+      "mapping_name": ""
+    },
+    "cleaned_condition": {
+      "display_name": "结构化条件",
+      "english_name": "cleaned_condition",
+      "description": "触发条件的结构化 JSON",
+      "mapping_name": ""
+    }
+  },
+  "decisions": {
+    "code_name": {
+      "display_name": "决议 ID",
+      "english_name": "code_name",
+      "description": "决议唯一 ID，建议使用 decision.xxx 命名",
+      "mapping_name": ""
+    },
+    "category": {
+      "display_name": "分类",
+      "english_name": "category",
+      "description": "决议分类标识，例如内政、军事、外交",
+      "mapping_name": ""
+    },
+    "title": {
+      "display_name": "标题",
+      "english_name": "title",
+      "description": "玩家在决议列表中看到的标题",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "决议描述",
+      "english_name": "description",
+      "description": "决议用途与可执行时机的说明",
+      "mapping_name": ""
+    },
+    "sort_order": {
+      "display_name": "排序值",
+      "english_name": "sort_order",
+      "description": "分类内的排序值，数值越小越靠前",
+      "mapping_name": ""
+    },
+    "visibility_conditions": {
+      "display_name": "可见条件",
+      "english_name": "visibility_conditions",
+      "description": "决定是否展示决议的 AND 条件列表；空值表示始终可见",
+      "mapping_name": ""
+    },
+    "execution_conditions": {
+      "display_name": "执行条件",
+      "english_name": "execution_conditions",
+      "description": "决定是否允许执行的 AND 条件列表",
+      "mapping_name": ""
+    },
+    "repeat_policy": {
+      "display_name": "重复执行规则",
+      "english_name": "repeat_policy",
+      "description": "once 执行一次；once_per_turn 每回合一次；cooldown 冷却后重复；repeatable 可重复。cooldown_turns、max_per_turn、max_total 为正整数，上限留空表示不限制。",
+      "mapping_name": ""
+    },
+    "database_effects": {
+      "display_name": "数据库效果",
+      "english_name": "database_effects",
+      "description": "点击成功后立即严格执行的 database 效果数组，仅使用 path/op/value 干净模型",
+      "mapping_name": ""
+    },
+    "effect_display": {
+      "display_name": "效果展示",
+      "english_name": "effect_display",
+      "description": "面向玩家展示的效果文本数组",
+      "mapping_name": ""
+    },
+    "condition_display": {
+      "display_name": "条件展示",
+      "english_name": "condition_display",
+      "description": "面向玩家展示的条件文本数组",
+      "mapping_name": ""
+    },
+    "short_term_prompt": {
+      "display_name": "短期提示词",
+      "english_name": "short_term_prompt",
+      "description": "执行决议后写入短期上下文的提示词",
+      "mapping_name": ""
+    },
+    "long_term_prompt": {
+      "display_name": "长期提示词",
+      "english_name": "long_term_prompt",
+      "description": "执行决议后写入长期上下文的提示词",
+      "mapping_name": ""
+    },
+    "super_event": {
+      "display_name": "执行后超事件",
+      "english_name": "super_event",
+      "description": "执行成功后展示的超事件快照对象，包含 event_id、title、description、image_url",
+      "mapping_name": ""
+    }
+  },
+  "troops": {
+    "regime_id": {
+      "display_name": "所属势力键值",
+      "english_name": "regime_id",
+      "description": "该军队接受哪支势力指挥",
+      "mapping_name": ""
+    },
+    "location_province_id": {
+      "display_name": "驻扎省份",
+      "english_name": "location_province_id",
+      "description": "该军队目前的驻地",
+      "mapping_name": ""
+    },
+    "code_name": {
+      "display_name": "军队键值",
+      "english_name": "code_name",
+      "description": "该军队的唯一编号",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "军队名称",
+      "english_name": "name",
+      "description": "该军队的名称",
+      "mapping_name": ""
+    },
+    "type": {
+      "display_name": "类型",
+      "english_name": "",
+      "description": "army 或 navy",
+      "mapping_name": ""
+    },
+    "exp": {
+      "display_name": "战斗经验",
+      "english_name": "exp",
+      "description": "该军队的作战经验；经验越高则战斗力越强，越不容易崩溃；每次作战后都会增加战斗经验，但军队伤亡补员后经验会下降",
+      "mapping_name": ""
+    },
+    "morale": {
+      "display_name": "士气",
+      "english_name": "morale",
+      "description": "士气是军队的作战决心，随着战斗进行士气会逐渐降低，一旦士气归零军队就会溃败。",
+      "mapping_name": ""
+    },
+    "loyalty": {
+      "display_name": "忠诚",
+      "english_name": "loyalty",
+      "description": "军队的忠诚度越高，哗变和投敌的概率就越低。",
+      "mapping_name": ""
+    },
+    "supply": {
+      "display_name": "补给",
+      "english_name": "supply",
+      "description": "军队的后勤补给状况。补给值越高士气上限和士气恢复速度就越高。",
+      "mapping_name": ""
+    },
+    "composition": {
+      "display_name": "兵种构成",
+      "english_name": "",
+      "description": "兵种/舰船构成",
+      "mapping_name": ""
+    },
+    "attached_personnel_count": {
+      "display_name": "搭载人员",
+      "english_name": "",
+      "description": "额外搭载人员（如海军陆战队）",
+      "mapping_name": ""
+    },
+    "extra_cost": {
+      "display_name": "额外花费",
+      "english_name": "extra_cost",
+      "description": "额外维护费",
+      "mapping_name": ""
+    },
+    "salary_rate": {
+      "display_name": "满饷率",
+      "english_name": "salary_rate",
+      "description": "军队实发饷银比例",
+      "mapping_name": ""
+    }
+  },
+  "recommend_ministers": {
+    "party_id": {
+      "display_name": "党派键值",
+      "english_name": "party_id",
+      "description": "举荐大臣所属的党派",
+      "mapping_name": ""
+    },
+    "code_name": {
+      "display_name": "大臣键值",
+      "english_name": "code_name",
+      "description": "举荐大臣的唯一代码，需与举荐表 code_name 一致",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "姓名",
+      "english_name": "name",
+      "description": "大臣的姓名",
+      "mapping_name": ""
+    },
+    "position": {
+      "display_name": "官职",
+      "english_name": "position",
+      "description": "大臣的官职",
+      "mapping_name": ""
+    },
+    "stance": {
+      "display_name": "政治立场",
+      "english_name": "stance",
+      "description": "大臣所持的政治立场",
+      "mapping_name": ""
+    },
+    "prompt": {
+      "display_name": "提示词",
+      "english_name": "prompt",
+      "description": "为 Agent 扮演大臣的提示词",
+      "mapping_name": ""
+    },
+    "influence": {
+      "display_name": "影响力",
+      "english_name": "influence",
+      "description": "在朝廷中的影响力",
+      "mapping_name": ""
+    },
+    "gender": {
+      "display_name": "性别",
+      "english_name": "gender",
+      "description": "male 或 female",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "描述",
+      "english_name": "description",
+      "description": "大臣的背景简介",
+      "mapping_name": ""
+    },
+    "is_visible": {
+      "display_name": "可见",
+      "english_name": "is_visible",
+      "description": "是否对玩家可见",
+      "mapping_name": ""
+    },
+    "is_alive": {
+      "display_name": "存活",
+      "english_name": "is_alive",
+      "description": "是否存活",
+      "mapping_name": ""
+    },
+    "is_system": {
+      "display_name": "系统大臣",
+      "english_name": "is_system",
+      "description": "是否为系统内置大臣",
+      "mapping_name": ""
+    }
+  },
+  "buildings": {
+    "code_name": {
+      "display_name": "主键",
+      "english_name": "code_name",
+      "description": "建筑唯一编号",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "建筑名称",
+      "english_name": "name",
+      "description": "建筑名称",
+      "mapping_name": ""
+    },
+    "building_location": {
+      "display_name": "建筑所在地",
+      "english_name": "building_location",
+      "description": "建筑位于的省份（须为 provinces.code_name 中存在的值，长度 ≤50 字符）",
+      "mapping_name": ""
+    },
+    "build_effects": {
+      "display_name": "建筑效果",
+      "english_name": "build_effects",
+      "description": "建筑造成的效果（可多个）",
+      "mapping_name": ""
+    },
+    "effect_ops": {
+      "display_name": "结构化效果操作（canonical 统一格式）",
+      "english_name": "effect_ops",
+      "description": "必填的结构化数据库效果数组（每行至少 1 条）。每一项必须使用 database 类型并包含非空 desc；add/subtract 的 value 必须为正数（方向由操作符表达）；目标表为 finances 时省略 row_name，其余表必须显式 row_name。服务端开局物化按同规则硬校验，违反会导致整个剧本无法开始。Mod Maker 和预览只保存及读取该列，不执行或转换效果。",
+      "mapping_name": ""
+    }
+  },
+  "recommend_base": {
+    "code_name": {
+      "display_name": "举荐键值",
+      "english_name": "code_name",
+      "description": "举荐记录的唯一代码，需与举荐大臣表的 code_name 一致",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "被举荐人",
+      "english_name": "name",
+      "description": "被举荐大臣的姓名",
+      "mapping_name": ""
+    },
+    "recommend_round": {
+      "display_name": "举荐回合",
+      "english_name": "recommend_round",
+      "description": "游戏中触发举荐事件的回合数",
+      "mapping_name": ""
+    },
+    "recommend_text": {
+      "display_name": "举荐文本",
+      "english_name": "recommend_text",
+      "description": "举荐奏折的正文，向玩家展示的举荐理由",
+      "mapping_name": ""
+    },
+    "option_display": {
+      "display_name": "选项文本",
+      "english_name": "option_display",
+      "description": "玩家接受举荐时的按钮文字",
+      "mapping_name": ""
+    }
+  },
+  "perks_table": {
+    "code_name": {
+      "display_name": "技能序号",
+      "english_name": "code_name",
+      "description": "国策节点的唯一编号（Skill.#### 形态），前置、互斥引用与图标命名使用同值",
+      "mapping_name": ""
+    },
+    "category": {
+      "display_name": "技能类别",
+      "english_name": "category",
+      "description": "国策分类：管理、学识、军事、政治、随机开局；主前置与互斥关系要求同分类",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "技能名称",
+      "english_name": "name",
+      "description": "国策的显示名称",
+      "mapping_name": ""
+    },
+    "prerequisites": {
+      "display_name": "前置技能",
+      "english_name": "prerequisites",
+      "description": "前置国策编号列表（逗号分隔）；Skill.0000 表示无前置；副前置允许跨分类",
+      "mapping_name": ""
+    },
+    "main_prerequisite": {
+      "display_name": "主前置技能",
+      "english_name": "main_prerequisite",
+      "description": "主前置国策；必须与当前国策同分类，且已包含在 prerequisites 中",
+      "mapping_name": ""
+    },
+    "mutually_skill": {
+      "display_name": "互斥国策",
+      "english_name": "mutually_skill",
+      "description": "互斥国策编号列表（逗号分隔）；关系必须双向登记且双方同分类",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "技能描述",
+      "english_name": "description",
+      "description": "国策效果的说明文案",
+      "mapping_name": ""
+    },
+    "current_turn_effect": {
+      "display_name": "本回合效果",
+      "english_name": "current_turn_effect",
+      "description": "本回合结构化数据库效果（JSON 数组）",
+      "mapping_name": ""
+    },
+    "effect_display": {
+      "display_name": "效果展示",
+      "english_name": "effect_display",
+      "description": "效果的玩家可见展示文案",
+      "mapping_name": ""
+    },
+    "context_text": {
+      "display_name": "上下文文本",
+      "english_name": "context_text",
+      "description": "本回合后续推演上下文",
+      "mapping_name": ""
+    },
+    "long_term_prompt": {
+      "display_name": "长期 prompt",
+      "english_name": "long_term_prompt",
+      "description": "后续回合的长期语义提示词",
+      "mapping_name": ""
+    }
+  },
+  "normal_events": {
+    "code_name": {
+      "display_name": "事件 ID",
+      "english_name": "code_name",
+      "description": "常规事件的唯一编号",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "事件名称",
+      "english_name": "name",
+      "description": "事件的显示名称",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "事件概述",
+      "english_name": "description",
+      "description": "事件内容的描述文本",
+      "mapping_name": ""
+    },
+    "effect_text": {
+      "display_name": "事件影响",
+      "english_name": "effect_text",
+      "description": "事件影响的展示文本；本表不存结构化效果，实际属性变化由服务端按分类生成",
+      "mapping_name": ""
+    },
+    "category": {
+      "display_name": "事件大类",
+      "english_name": "category",
+      "description": "事件分类：军事、管理、政治、学识；玩家每轮选择分类后按分类展示",
+      "mapping_name": ""
+    }
+  },
+  "fixed_turn_events": {
+    "code_name": {
+      "display_name": "事件 key",
+      "english_name": "code_name",
+      "description": "固定回合事件的唯一编号",
+      "mapping_name": ""
+    },
+    "title": {
+      "display_name": "事件标题",
+      "english_name": "title",
+      "description": "事件标题",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "事件文本",
+      "english_name": "description",
+      "description": "事件描述文本",
+      "mapping_name": ""
+    },
+    "cleaned_condition": {
+      "display_name": "触发条件",
+      "english_name": "cleaned_condition",
+      "description": "固定回合触发条件的结构化 JSON",
+      "mapping_name": ""
+    },
+    "c1_content": {
+      "display_name": "选项1 内容",
+      "english_name": "c1_content",
+      "description": "选项1 的内容文本",
+      "mapping_name": ""
+    },
+    "c1_display": {
+      "display_name": "选项1 展示",
+      "english_name": "c1_display",
+      "description": "选项1 的效果展示文本",
+      "mapping_name": ""
+    },
+    "cleaned_c1_effect": {
+      "display_name": "选项1 效果",
+      "english_name": "cleaned_c1_effect",
+      "description": "选项1 的结构化效果 JSON",
+      "mapping_name": ""
+    },
+    "c2_content": {
+      "display_name": "选项2 内容",
+      "english_name": "c2_content",
+      "description": "选项2 的内容文本",
+      "mapping_name": ""
+    },
+    "c2_display": {
+      "display_name": "选项2 展示",
+      "english_name": "c2_display",
+      "description": "选项2 的效果展示文本",
+      "mapping_name": ""
+    },
+    "cleaned_c2_effect": {
+      "display_name": "选项2 效果",
+      "english_name": "cleaned_c2_effect",
+      "description": "选项2 的结构化效果 JSON",
+      "mapping_name": ""
+    },
+    "c3_content": {
+      "display_name": "选项3 内容",
+      "english_name": "c3_content",
+      "description": "选项3 的内容文本",
+      "mapping_name": ""
+    },
+    "c3_display": {
+      "display_name": "选项3 展示",
+      "english_name": "c3_display",
+      "description": "选项3 的效果展示文本",
+      "mapping_name": ""
+    },
+    "cleaned_c3_effect": {
+      "display_name": "选项3 效果",
+      "english_name": "cleaned_c3_effect",
+      "description": "选项3 的结构化效果 JSON",
+      "mapping_name": ""
+    }
+  },
+  "random_events_chain": {
+    "code_name": {
+      "display_name": "事件 key",
+      "english_name": "code_name",
+      "description": "链式随机事件的唯一编号；随机事件相关表的 code_name 跨表唯一，同链节点建议共用前缀",
+      "mapping_name": ""
+    },
+    "title": {
+      "display_name": "事件标题",
+      "english_name": "title",
+      "description": "事件标题",
+      "mapping_name": ""
+    },
+    "description": {
+      "display_name": "事件文本",
+      "english_name": "description",
+      "description": "事件描述文本",
+      "mapping_name": ""
+    },
+    "cleaned_condition": {
+      "display_name": "触发条件",
+      "english_name": "cleaned_condition",
+      "description": "触发条件的结构化 JSON",
+      "mapping_name": ""
+    },
+    "c1_content": {
+      "display_name": "选项1 内容",
+      "english_name": "c1_content",
+      "description": "选项1 的内容文本",
+      "mapping_name": ""
+    },
+    "c1_display": {
+      "display_name": "选项1 展示",
+      "english_name": "c1_display",
+      "description": "选项1 的效果展示文本",
+      "mapping_name": ""
+    },
+    "cleaned_c1_effect": {
+      "display_name": "选项1 效果",
+      "english_name": "cleaned_c1_effect",
+      "description": "选项1 的结构化效果 JSON；可含至多一个 follow_up 指向同链后继节点",
+      "mapping_name": ""
+    },
+    "c2_content": {
+      "display_name": "选项2 内容",
+      "english_name": "c2_content",
+      "description": "选项2 的内容文本",
+      "mapping_name": ""
+    },
+    "c2_display": {
+      "display_name": "选项2 展示",
+      "english_name": "c2_display",
+      "description": "选项2 的效果展示文本",
+      "mapping_name": ""
+    },
+    "cleaned_c2_effect": {
+      "display_name": "选项2 效果",
+      "english_name": "cleaned_c2_effect",
+      "description": "选项2 的结构化效果 JSON；可含至多一个 follow_up 指向同链后继节点",
+      "mapping_name": ""
+    },
+    "c3_content": {
+      "display_name": "选项3 内容",
+      "english_name": "c3_content",
+      "description": "选项3 的内容文本",
+      "mapping_name": ""
+    },
+    "c3_display": {
+      "display_name": "选项3 展示",
+      "english_name": "c3_display",
+      "description": "选项3 的效果展示文本",
+      "mapping_name": ""
+    },
+    "cleaned_c3_effect": {
+      "display_name": "选项3 效果",
+      "english_name": "cleaned_c3_effect",
+      "description": "选项3 的结构化效果 JSON；可含至多一个 follow_up 指向同链后继节点",
+      "mapping_name": ""
+    }
+  },
+  "game_state_rules": {
+    "title": {
+      "display_name": "规则标题",
+      "english_name": "title",
+      "description": "规则标题、同标题规则按难度区分",
+      "mapping_name": ""
+    },
+    "category": {
+      "display_name": "输出通道",
+      "english_name": "category",
+      "description": "game_state=态势警告、special_simulation=特殊推演",
+      "mapping_name": ""
+    },
+    "mode": {
+      "display_name": "适用难度",
+      "english_name": "mode",
+      "description": "all 或 easy、normal、hard 的组合",
+      "mapping_name": ""
+    },
+    "cleaned_condition": {
+      "display_name": "触发条件",
+      "english_name": "cleaned_condition",
+      "description": "触发条件的结构化 JSON（扁平 AND 数组）",
+      "mapping_name": ""
+    },
+    "content": {
+      "display_name": "输出内容",
+      "english_name": "content",
+      "description": "输出内容模板、支持 {字段名} 与 {matched.列名} 占位符",
+      "mapping_name": ""
+    }
+  },
+  "special_simulations": {
+    "_id": {
+      "display_name": "ID",
+      "english_name": "_id",
+      "description": "特殊推演记录的唯一标识",
+      "mapping_name": ""
+    },
+    "turn_number": {
+      "display_name": "回合数",
+      "english_name": "turn_number",
+      "description": "触发该特殊推演的回合编号",
+      "mapping_name": ""
+    },
+    "title": {
+      "display_name": "标题",
+      "english_name": "title",
+      "description": "特殊推演的标题",
+      "mapping_name": ""
+    },
+    "content": {
+      "display_name": "内容",
+      "english_name": "content",
+      "description": "特殊推演的内容文本，描述先决条件与推演逻辑",
+      "mapping_name": ""
+    },
+    "is_active": {
+      "display_name": "是否启用",
+      "english_name": "is_active",
+      "description": "是否启用该特殊推演",
+      "mapping_name": ""
+    }
+  },
+  "initial_tasks": {
+    "title": {
+      "display_name": "任务标题",
+      "english_name": "title",
+      "description": "开局任务的标题，本表主键",
+      "mapping_name": ""
+    },
+    "body": {
+      "display_name": "正文描述",
+      "english_name": "body",
+      "description": "开局任务的正文文本",
+      "mapping_name": ""
+    },
+    "solution_summary": {
+      "display_name": "验收条件",
+      "english_name": "solution_summary",
+      "description": "任务完成条件的说明文本",
+      "mapping_name": ""
+    }
+  },
+  "events_prediction": {
+    "code_name": {
+      "display_name": "事件 ID",
+      "english_name": "code_name",
+      "description": "预测事件的唯一编号",
+      "mapping_name": ""
+    },
+    "predicted_occurrence_time": {
+      "display_name": "预测发生时间",
+      "english_name": "predicted_occurrence_time",
+      "description": "预测事件发生的时间描述",
+      "mapping_name": ""
+    },
+    "predicted_occurrence_turn": {
+      "display_name": "预测发生回合",
+      "english_name": "predicted_occurrence_turn",
+      "description": "预测事件发生的回合编号",
+      "mapping_name": ""
+    },
+    "content": {
+      "display_name": "预测内容",
+      "english_name": "content",
+      "description": "预测内容的结构化 JSON，展示于游戏内的未来推演面板",
+      "mapping_name": ""
+    }
+  },
+  "player_attributes_init_table": {
+    "attr_id": {
+      "display_name": "属性序号",
+      "english_name": "attr_id",
+      "description": "玩家开局属性的编号，本表主键",
+      "mapping_name": ""
+    },
+    "name": {
+      "display_name": "属性名称",
+      "english_name": "name",
+      "description": "属性名称，取值为军事、管理、政治、学识",
+      "mapping_name": ""
+    },
+    "value": {
+      "display_name": "属性值",
+      "english_name": "value",
+      "description": "该属性的开局初始值，不小于 0",
+      "mapping_name": ""
+    }
+  },
+  "province_land_holdings": {
+    "code_name": {
+      "display_name": "省份土地键值",
+      "english_name": "code_name",
+      "description": "复合派生主键，由 province_code 与 land_type_code 以下划线拼接而成",
+      "mapping_name": ""
+    },
+    "province_code": {
+      "display_name": "省份键值",
+      "english_name": "province_code",
+      "description": "所属省份的 code_name，引用 provinces 表",
+      "mapping_name": ""
+    },
+    "land_type_code": {
+      "display_name": "土地类型键值",
+      "english_name": "land_type_code",
+      "description": "土地类型的 code_name，引用 land_tax_configs 表",
+      "mapping_name": ""
+    },
+    "area_mu": {
+      "display_name": "面积（亩）",
+      "english_name": "area_mu",
+      "description": "该省该土地类型的登记面积",
+      "mapping_name": ""
+    }
+  }
+}

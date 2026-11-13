@@ -1,0 +1,198 @@
+manifest_version: 1
+mod:
+  id: chongzhen-1627
+  name: 历史模拟器：崇祯（1627）
+  description: 扮演崇祯皇帝朱由检，自天启七年冬季接手内忧外患的大明，在朝堂博弈、财政调度与战事决断中挽救危局
+  author: 青干工作室
+files:
+  pg:
+    regimes:
+      path: pg/regimes.csv
+    parties:
+      path: pg/parties.csv
+    social_classes:
+      path: pg/social_classes.csv
+    land_tax_configs:
+      path: pg/land_tax_configs.csv
+    equipments:
+      path: pg/equipments.csv
+    ship_configs:
+      path: pg/ship_configs.csv
+    buildings:
+      path: pg/buildings.csv
+    ministers:
+      path: pg/ministers.csv
+    arm_configs:
+      path: pg/arm_configs.csv
+    provinces:
+      path: pg/provinces.csv
+    province_land_holdings:
+      path: pg/province_land_holdings.csv
+    troops:
+      path: pg/troops.csv
+    finances:
+      path: pg/finances.csv
+    events_prediction:
+      path: pg/events_prediction.csv
+  mongo:
+    normal_events:
+      path: mongo/normal_events.csv
+    random_events:
+      path: mongo/random_events.csv
+    fixed_turn_events:
+      path: mongo/fixed_turn_events.csv
+    game_state_rules:
+      path: mongo/game_state_rules.csv
+    random_events_chain:
+      path: mongo/random_events_chain.csv
+    decisions:
+      path: mongo/decisions.csv
+    perks_table:
+      path: mongo/perks_table.csv
+    special_simulations:
+      path: mongo/special_simulations.csv
+    initial_tasks:
+      path: mongo/initial_tasks.csv
+  global:
+    super_events:
+      path: global/super_events.csv
+    recommend_ministers:
+      path: global/recommend_ministers.csv
+    recommend_base:
+      path: global/recommend_base.csv
+    player_attributes_init_table:
+      path: global/player_attributes_init_table.csv
+    minister_positions:
+      path: global/minister_positions.json
+    game_config:
+      path: global/game_config.json
+    recommend:
+      path: global/recommend.csv
+    minister_assets:
+      path: global/minister_assets.csv
+  global_config:
+    path: global_config.json
+  pg_table_mapping:
+    path: pg-table-mapping.json
+  prompt:
+    AgentLoop-Simulate-System.setting:
+      path: prompt/setting/AgentLoop-Simulate-System.md
+      required: true
+      layer: setting
+    AgentLoop-Simulate-System.rules:
+      path: prompt/rules/AgentLoop-Simulate-System.md
+      required: true
+      layer: rules
+    AgentLoop-Simulate-System.example:
+      path: prompt/example/AgentLoop-Simulate-System.md
+      required: false
+      layer: example
+    AgentLoop-Simulate-Step1.rules:
+      path: prompt/rules/AgentLoop-Simulate-Step1.md
+      required: true
+      layer: rules
+    AgentLoop-Simulate-Step1.example:
+      path: prompt/example/AgentLoop-Simulate-Step1.md
+      required: false
+      layer: example
+    AgentLoop-Simulate-Step2.rules:
+      path: prompt/rules/AgentLoop-Simulate-Step2.md
+      required: true
+      layer: rules
+    AgentLoop-Simulate-Step3.setting:
+      path: prompt/setting/AgentLoop-Simulate-Step3.md
+      required: true
+      layer: setting
+    AgentLoop-Simulate-Step3.rules:
+      path: prompt/rules/AgentLoop-Simulate-Step3.md
+      required: true
+      layer: rules
+    AgentLoop-Simulate-Step3.example:
+      path: prompt/example/AgentLoop-Simulate-Step3.md
+      required: false
+      layer: example
+    OutputGenerationAgent.setting:
+      path: prompt/setting/OutputGenerationAgent.md
+      required: true
+      layer: setting
+    OutputGenerationAgent.rules:
+      path: prompt/rules/OutputGenerationAgent.md
+      required: true
+      layer: rules
+    OutputGenerationAgent.example:
+      path: prompt/example/OutputGenerationAgent.md
+      required: false
+      layer: example
+    EdictRefineAgent.setting:
+      path: prompt/setting/EdictRefineAgent.md
+      required: true
+      layer: setting
+    EdictRefineAgent.rules:
+      path: prompt/rules/EdictRefineAgent.md
+      required: true
+      layer: rules
+    EndGameAgent.setting:
+      path: prompt/setting/EndGameAgent.md
+      required: true
+      layer: setting
+    EndGameAgent.rules:
+      path: prompt/rules/EndGameAgent.md
+      required: true
+      layer: rules
+    EndGameAgent.example:
+      path: prompt/example/EndGameAgent.md
+      required: false
+      layer: example
+    TaskAgent.setting:
+      path: prompt/setting/TaskAgent.md
+      required: true
+      layer: setting
+    TaskAgent.rules:
+      path: prompt/rules/TaskAgent.md
+      required: true
+      layer: rules
+    TaskAgent.example:
+      path: prompt/example/TaskAgent.md
+      required: false
+      layer: example
+    EventManagementAgent.setting:
+      path: prompt/setting/EventManagementAgent.md
+      required: true
+      layer: setting
+    EventManagementAgent.rules:
+      path: prompt/rules/EventManagementAgent.md
+      required: true
+      layer: rules
+    NPCUnifiedPrompt.setting:
+      path: prompt/setting/NPCUnifiedPrompt.md
+      required: true
+      layer: setting
+    NPCUnifiedPrompt.rules:
+      path: prompt/rules/NPCUnifiedPrompt.md
+      required: true
+      layer: rules
+    CourtDiscussionPrompt.setting:
+      path: prompt/setting/CourtDiscussionPrompt.md
+      required: true
+      layer: setting
+    CourtDiscussionPrompt.rules:
+      path: prompt/rules/CourtDiscussionPrompt.md
+      required: true
+      layer: rules
+    EasyModeContent.rules:
+      path: prompt/rules/EasyModeContent.md
+      required: true
+      layer: rules
+    db_info.setting:
+      path: prompt/setting/db_info.md
+      required: true
+      layer: setting
+    ScenarioMeta:
+      path: prompt/ScenarioMeta.yaml
+  text:
+    default_turn_0:
+      path: text/default_turn_0.txt
+    gsr_yuan_kills_mao:
+      path: text/gsr_yuan_kills_mao.txt
+    gsr_jisi_incident:
+      path: text/gsr_jisi_incident.txt

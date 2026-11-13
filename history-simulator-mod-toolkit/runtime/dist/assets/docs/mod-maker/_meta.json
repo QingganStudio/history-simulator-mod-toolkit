@@ -1,0 +1,6 @@
+[
+  { "type": "file", "name": "index", "label": "本篇导读" },
+  { "type": "file", "name": "starting-point", "label": "第 4 章：选择制作起点" },
+  { "type": "file", "name": "editor", "label": "第 5 章：认识编辑器" },
+  { "type": "file", "name": "data-rules", "label": "第 6 章：理解数据编辑规则" }
+]

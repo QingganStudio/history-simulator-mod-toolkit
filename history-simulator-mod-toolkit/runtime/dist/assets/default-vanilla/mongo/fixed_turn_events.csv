@@ -1,0 +1,4 @@
+code_name,title,description,cleaned_condition,c1_content,c1_display,cleaned_c1_effect,c2_content,c2_display,cleaned_c2_effect,c3_content,c3_display,cleaned_c3_effect
+事件 key,事件标题,事件文本,触发条件,选项1 内容,选项1 展示,选项1 效果,选项2 内容,选项2 展示,选项2 效果,选项3 内容,选项3 展示,选项3 效果
+固定回合事件的唯一编号,事件标题,事件描述文本,固定回合触发条件的结构化 JSON,选项1 的内容文本,选项1 的效果展示文本,选项1 的结构化效果 JSON,选项2 的内容文本,选项2 的效果展示文本,选项2 的结构化效果 JSON,选项3 的内容文本,选项3 的效果展示文本,选项3 的结构化效果 JSON
+,,,,,,,,,,,,

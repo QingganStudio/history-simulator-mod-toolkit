@@ -1,0 +1,32 @@
+[
+  {
+    "type": "file",
+    "name": "index",
+    "label": "本篇导读"
+  },
+  {
+    "type": "file",
+    "name": "overview",
+    "label": "第 23 章：工具链总览"
+  },
+  {
+    "type": "file",
+    "name": "workflow",
+    "label": "第 24 章：Agent 工作流契约"
+  },
+  {
+    "type": "file",
+    "name": "tools-reference",
+    "label": "第 25 章：工具参考"
+  },
+  {
+    "type": "file",
+    "name": "preflight-and-publish",
+    "label": "第 26 章：发布门禁与 preflight"
+  },
+  {
+    "type": "file",
+    "name": "agent-plugin",
+    "label": "第 27 章：Agent Plugin（插件形态）"
+  }
+]

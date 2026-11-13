@@ -1,0 +1,8 @@
+{
+  "name": "history-simulator-mod-toolkit",
+  "description": "历史模拟器 Mod 制作工具：查询剧本资料、创建和校验 Mod。当前内置崇祯剧本数据。",
+  "version": "1.7.0",
+  "author": {
+    "name": "青干工作室"
+  }
+}

@@ -1,0 +1,55 @@
+---
+pageType: home
+title: Mod 制作指南
+titleSuffix: 历史模拟器：崇祯
+
+hero:
+  name: Mod 制作指南
+  text: 从第一次修改到发布创意工坊
+  tagline: 面向零基础作者的《历史模拟器：崇祯》Mod 制作完整指南
+  actions:
+    - theme: brand
+      text: 制作第一个 Mod
+      link: /getting-started/first-mod
+    - theme: alt
+      text: 用 AI / Agent 制作
+      link: /tools-and-agents/
+    - theme: alt
+      text: 查看完整学习路线
+      link: /getting-started/
+
+features:
+  - title: 按步骤完成作品
+    details: 从游戏内打开 Mod Maker，分别学习数据 Mock 与客户端覆盖，保存、预览、导入并理解每种环境的结论边界。
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>'
+  - title: 覆盖全部制作能力
+    details: 数据表、事件、国策、地图、图片资源、样式、游戏配置和提示词都有独立教程；编辑器与工具链两条制作路径共享同一套契约与上传门禁。
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>'
+  - title: 用 AI 与命令行制作
+    details: mod-toolkit 以 MCP 与 CLI 双绑定提供校验、发布预检、文档与原版数据查询，配合 agent 工作流契约，让你的 AI 助手直接制作 Mod。
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>'
+  - title: 与当前契约同步
+    details: 27 张源表的字段参考来自仓库共享 Schema，并清楚区分 2 张派生表（其中立绘表有专属编辑入口）。
+    icon: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>'
+---
+
+## 从这里开始
+
+第一次制作 Mod，建议按顺序阅读：
+
+1. [认识 Mod 制作](/getting-started/understand-mods)
+2. [准备制作环境](/getting-started/setup)
+3. [完成第一个 Mod](/getting-started/first-mod)
+4. [保存与内容预检](/validate-and-publish/save-and-preflight)
+5. [本地导入和客户端测试](/validate-and-publish/local-testing)
+6. [发布到 Steam Workshop](/validate-and-publish/workshop)
+
+更习惯让 AI 动手？从[工具链与 Agent 工作流](/tools-and-agents/)开始：把校验与预检工具装进你的 agent（Claude Code / Codex / ZCode），或直接在终端与 CI 里使用同名 CLI——两条路径的产物和发布门禁完全一致。
+
+遇到字段或文件问题时，不需要从头阅读教程，可直接使用[完整参考手册](/reference/)。
+
+:::tip 验证层级
+Mod Maker 预览能读取部分本地 CSV/JSON，检查展示、关联、派生值和有限的模拟交互；本地打包版用于验证客户端资源、协议和回退；数据库、真实规则、AI 与多回合玩法需等待 Workshop 服务端场景就绪后验证。
+:::
+
+本文档当前只提供中文内容，页面中的英文名称均为必须原样保留的文件名、字段名或平台术语。

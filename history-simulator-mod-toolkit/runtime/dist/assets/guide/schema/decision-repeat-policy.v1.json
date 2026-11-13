@@ -1,0 +1,75 @@
+{
+  "types": {
+    "once": {
+      "label": "执行一次",
+      "parameters": []
+    },
+    "once_per_turn": {
+      "label": "每回合一次",
+      "parameters": ["max_total"]
+    },
+    "cooldown": {
+      "label": "冷却后重复",
+      "parameters": ["cooldown_turns", "max_per_turn", "max_total"]
+    },
+    "repeatable": {
+      "label": "长期执行",
+      "parameters": ["max_per_turn", "max_total"]
+    }
+  },
+  "parameters": {
+    "cooldown_turns": {
+      "label": "冷却回合数",
+      "minimum": 1,
+      "required_for": "cooldown",
+      "type": "integer",
+      "finite": true,
+      "safe_integer": true,
+      "null_means_unset": true
+    },
+    "max_per_turn": {
+      "label": "每回合最多次数",
+      "minimum": 1,
+      "optional": true,
+      "type": "integer",
+      "finite": true,
+      "safe_integer": true,
+      "null_means_unset": true
+    },
+    "max_total": {
+      "label": "总执行次数上限",
+      "minimum": 1,
+      "optional": true,
+      "type": "integer",
+      "finite": true,
+      "safe_integer": true,
+      "null_means_unset": true
+    }
+  },
+  "default_type": "once",
+  "cooldown_example": "第2回合执行、冷却3回合：第4回合剩1，第5回合可再次执行",
+  "constraints": {
+    "once_per_turn.max_per_turn": {
+      "allowed": [null, 1]
+    },
+    "cooldown.cooldown_turns": {
+      "required": true,
+      "minimum": 1
+    },
+    "priority": ["total_limit", "per_turn_limit", "cooldown"]
+  },
+  "compatibility": {
+    "positive_integer_strings": "interpreted without changing original on unrelated edits",
+    "true": 1,
+    "false": "invalid because it becomes 0",
+    "unknown_keys": "preserved with non-blocking notice",
+    "unused_keys": "preserved on unrelated edits; omitted from directly edited policy",
+    "missing_type": "once",
+    "unsafe_integer": "cannot be interpreted losslessly; error"
+  },
+  "diagnostics": {
+    "field_path": "repeat_policy.<parameter>",
+    "blocking": "errors",
+    "non_blocking": "warnings; separate from upload issues"
+  }
+}

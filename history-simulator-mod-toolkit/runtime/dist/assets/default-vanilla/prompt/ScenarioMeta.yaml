@@ -1,0 +1,51 @@
+# 剧本元信息：主人公称呼 + 历法。集中一处，渲染期由 render_agent_prompt 注入为模板变量。
+# mod 作者改这里即可覆盖称呼与纪年，无需改任何模板里的条件分支。
+# 内容为 YAML，由 app/utils/scenario_meta.py 用 yaml.safe_load 解析。
+
+# 主人公称呼（称呼类）
+protagonist_title: 崇祯皇帝
+protagonist_role: 皇帝                     # 主角短称谓：发言人 / 事件触发人标签用（mod 可改为 元首/领主 等）
+ruler_name: 朱由检
+honorific: 陛下
+dynasty: 明朝
+
+# 历法（历法类）
+era_name: 崇祯
+predecessor_label: 天启七年冬季          # 第 0 回合的时间标签
+predecessor_note: （特别注意，天启七年冬季后，就是崇祯一年春季。没有天启八年。）
+seasons: [春季, 夏季, 秋季, 冬季]
+
+# 术语（mod 相关）
+edict_term: 诏书                          # 玩家下达命令的文书名（mod 可改为 法令/命令 等）
+chronicle_style: 文言文                    # 事件压缩归档的文体（mod 可改为 白话/编年体 等）
+memorial_term: 奏疏                        # 玩家呈报的文书名（mod 可改为 章奏/公函 等）
+treasury_term: 国库                        # 国库账户称谓：契约/工具描述/财政文案共用（mod 可改为 府库/金库 等）
+privy_purse_term: 内帑                     # 君主私库称谓：同上（mod 可改为 内库/御库 等）
+chronicle_term: 政务纪要                   # 推演报告第 2 节的纪事标题（mod 可改为 朝政纪要/政事纪要 等）
+narrator_self_term: 臣下                   # 报告叙述者自称的口吻名（mod 可改为 属下/臣属/元老 等）
+
+# 奏折效果区块展示术语（mod 可覆盖；下列即缺省值，mod 按世界观改措辞）
+# 例：罗马 mod 可把 营缮→营造、纪闻→要闻、核算效果→结算 等
+display_terms:
+  phase0_effects_intro: 陛下日理万机，宵旰忧勤，本季政务繁剧。谨择要上闻，以省圣览，其详备细目见诸后文。
+  phase0_effects_intro_start: 本季伊始，依既定章程所行诸务，其影响已并入国情，兹列于下：
+  phase0_effects_intro_end: 本季末仰承圣恩，诏令诸事推行顺遂、各有成效，缮录如次：
+  report_eval_title: 诏书评估与执行          # 强制报告轮/阶段3纠正注入的报告首节标题
+  report_deviation_title: 诏书落实补充        # 落实补充块标题（强制轮/salvage 兜底注入；只补 partial/no_change）
+  section_progress: 长期事务效果            # Phase 0 旧工程、事件周期与到期恢复
+  section_policy: 国策效果                # 【国策效果】区块标题
+  section_settlement: 季初核算效果          # 【季初核算效果】区块标题（Phase 0 例行核算）
+  section_season: 季末核算效果              # 【季末核算效果】区块标题（Phase 2 财务/装备/军队变化）
+  tag_build: 新建                         # 建筑变更标签：新建
+  tag_renovate: 改建                      # 建筑变更标签：改建
+  tag_demolish: 拆除                      # 建筑变更标签：拆除
+  hook_start: 本季始行                    # 事件开始节点的奏疏白话
+  hook_cycle: 本季续行                    # 事件周期节点的奏疏白话
+  hook_complete: 本季了结                 # 事件完成节点的奏疏白话
+  hook_cancel: 本季中止                   # 事件取消节点的奏疏白话
+  hook_fail: 本季未成                     # 事件失败节点的奏疏白话
+  hook_restore_start: 本季暂行            # 临时效果开始的奏疏白话
+  hook_restore: 本季期满复旧              # 到期恢复的奏疏白话
+  source_finance: 季度财政核算            # 核算效果中的财政来源标签
+  source_equipment: 装备季度生产          # 核算效果中的装备来源标签
+  source_recalculate: 自动核算

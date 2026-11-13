@@ -1,0 +1,7 @@
+[
+  { "type": "file", "name": "nodes-and-categories", "label": "9.1 节点字段、分类与稳定标识" },
+  { "type": "file", "name": "prerequisites-and-layout", "label": "9.2 前置关系、连线与布局" },
+  { "type": "file", "name": "mutual-exclusion", "label": "9.3 互斥关系与引用清理" },
+  { "type": "file", "name": "effects-and-icons", "label": "9.4 效果、提示词与锁定/解锁图标" },
+  { "type": "file", "name": "validation", "label": "9.5 Preview 与真实解锁验证" }
+]

@@ -1,0 +1,12 @@
+[
+  { "type": "file", "name": "index", "label": "本篇导读" },
+  {
+    "type": "dir",
+    "name": "game-and-ui-config",
+    "label": "第 13 章：高级配置总览与验证",
+    "collapsible": true,
+    "collapsed": false
+  },
+  { "type": "file", "name": "texts-and-prompts", "label": "第 14 章：文本、对话与提示词" },
+  { "type": "file", "name": "prompt-reskin", "label": "第 14.5 章：三层 prompt 分工写作法" }
+]

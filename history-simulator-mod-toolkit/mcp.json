@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "history-simulator-mod-toolkit": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "${PLUGIN_ROOT}/runtime/dist/mcp.js",
+        "--plugin-mode"
+      ],
+      "env": {
+        "MOD_TOOLKIT_DOCS_DIR": "${PLUGIN_ROOT}/runtime/dist/assets/docs",
+        "MOD_TOOLKIT_VANILLA_DIR": "${PLUGIN_ROOT}/runtime/dist/assets/default-vanilla",
+        "MOD_TOOLKIT_FIELD_DEFINITIONS_DIR": "${PLUGIN_ROOT}/runtime/dist/assets/field-definitions"
+      }
+    },
+    "history-simulator-logs": {
+      "type": "streamable-http",
+      "url": "http://127.0.0.1:16270/"
+    }
+  }
+}

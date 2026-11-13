@@ -1,0 +1,2100 @@
+{
+  "version": "1.1.0",
+  "generated_at": "2026-10-19T00:00:00Z",
+  "runtime_table_access": {
+    "condition-read": [
+      "arm_configs",
+      "buildings",
+      "equipments",
+      "finances",
+      "land_tax_configs",
+      "ministers",
+      "parties",
+      "provinces",
+      "regimes",
+      "ship_configs",
+      "social_classes",
+      "troops",
+      "province_land_holdings"
+    ],
+    "effect-write": [
+      "arm_configs",
+      "buildings",
+      "equipments",
+      "finances",
+      "land_tax_configs",
+      "ministers",
+      "parties",
+      "provinces",
+      "regimes",
+      "ship_configs",
+      "social_classes",
+      "troops",
+      "province_land_holdings"
+    ]
+  },
+  "tables": {
+    "regimes": {
+      "name": "regimes",
+      "group": "pg",
+      "display_name": "政权",
+      "layer": 0,
+      "view": "A",
+      "primary_key": "code_name",
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "current_ruler",
+          "display_name": "current_ruler",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "corruption",
+          "display_name": "corruption",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "prestige",
+          "display_name": "prestige",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "currency_policy",
+          "display_name": "currency_policy",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        }
+      ]
+    },
+    "parties": {
+      "name": "parties",
+      "group": "pg",
+      "display_name": "党派",
+      "layer": 0,
+      "view": "A",
+      "primary_key": "code_name",
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "satisfaction",
+          "display_name": "satisfaction",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "influence",
+          "display_name": "influence",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "rebellion_risk",
+          "display_name": "rebellion_risk",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "description",
+          "display_name": "description",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    "social_classes": {
+      "name": "social_classes",
+      "group": "pg",
+      "display_name": "社会阶层",
+      "layer": 0,
+      "view": "A",
+      "primary_key": "code_name",
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "description",
+          "display_name": "description",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "satisfaction",
+          "display_name": "satisfaction",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "influence",
+          "display_name": "influence",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "rebellion_risk",
+          "display_name": "rebellion_risk",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        }
+      ]
+    },
+    "land_tax_configs": {
+      "name": "land_tax_configs",
+      "group": "pg",
+      "display_name": "土地税率",
+      "layer": 0,
+      "view": "A",
+      "primary_key": "code_name",
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "tax_base",
+          "display_name": "tax_base",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 99.999999,
+          "advisoryMin": 0,
+          "advisoryMax": 1
+        },
+        {
+          "name": "tax_liao",
+          "display_name": "tax_liao",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 99.999999,
+          "advisoryMin": 0,
+          "advisoryMax": 1
+        },
+        {
+          "name": "tax_old",
+          "display_name": "tax_old",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 99.999999,
+          "advisoryMin": 0,
+          "advisoryMax": 1
+        },
+        {
+          "name": "tax_new",
+          "display_name": "tax_new",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 99.999999,
+          "advisoryMin": 0,
+          "advisoryMax": 1
+        },
+        {
+          "name": "is_royal",
+          "display_name": "is_royal",
+          "type": "boolean",
+          "required": true
+        }
+      ]
+    },
+    "equipments": {
+      "name": "equipments",
+      "group": "pg",
+      "display_name": "装备",
+      "layer": 0,
+      "view": "A",
+      "primary_key": "code_name",
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "stock_count",
+          "display_name": "stock_count",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000
+        },
+        {
+          "name": "annual_output",
+          "display_name": "annual_output",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000
+        },
+        {
+          "name": "description",
+          "display_name": "description",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    "ship_configs": {
+      "name": "ship_configs",
+      "group": "pg",
+      "display_name": "船只配置",
+      "layer": 0,
+      "view": "B",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "name"
+      ],
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "crew_count",
+          "display_name": "crew_count",
+          "type": "int",
+          "required": false,
+          "min": 0,
+          "max": 1900000000
+        },
+        {
+          "name": "light_cannon_count",
+          "display_name": "light_cannon_count",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000
+        },
+        {
+          "name": "heavy_cannon_count",
+          "display_name": "heavy_cannon_count",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000
+        },
+        {
+          "name": "maintenance_cost",
+          "display_name": "maintenance_cost",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 90000000
+        },
+        {
+          "name": "description",
+          "display_name": "description",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    "buildings": {
+      "name": "buildings",
+      "group": "pg",
+      "display_name": "建筑",
+      "layer": 3,
+      "view": "B",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "name",
+        "building_location"
+      ],
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "max_length": 50,
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "max_length": 100,
+          "required": true
+        },
+        {
+          "name": "building_location",
+          "display_name": "building_location",
+          "type": "foreign_key",
+          "max_length": 50,
+          "required": true,
+          "fk": {
+            "target_table": "provinces",
+            "target_column": "code_name"
+          }
+        },
+        {
+          "name": "build_effects",
+          "display_name": "build_effects",
+          "type": "string_list",
+          "required": true
+        },
+        {
+          "name": "effect_ops",
+          "display_name": "结构化效果操作（canonical 统一格式）",
+          "type": "effect_list",
+          "subfield_mapping": "building_effect_ops",
+          "required": true
+        }
+      ]
+    },
+    "ministers": {
+      "name": "ministers",
+      "group": "pg",
+      "display_name": "大臣",
+      "layer": 1,
+      "view": "B",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "name",
+        "position"
+      ],
+      "columns": [
+        {
+          "name": "party_id",
+          "display_name": "party_id",
+          "type": "foreign_key",
+          "required": true,
+          "fk": {
+            "target_table": "parties",
+            "target_column": "code_name"
+          }
+        },
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "position",
+          "display_name": "position",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "stance",
+          "display_name": "stance",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "prompt",
+          "display_name": "prompt",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "influence",
+          "display_name": "influence",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "gender",
+          "display_name": "gender",
+          "type": "enum",
+          "required": true,
+          "enum_values": [
+            "male",
+            "female"
+          ],
+          "default": "male"
+        },
+        {
+          "name": "description",
+          "display_name": "description",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "is_visible",
+          "display_name": "is_visible",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "is_alive",
+          "display_name": "is_alive",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "is_system",
+          "display_name": "is_system",
+          "type": "boolean",
+          "required": true
+        }
+      ]
+    },
+    "arm_configs": {
+      "name": "arm_configs",
+      "group": "pg",
+      "display_name": "兵种配置",
+      "layer": 1,
+      "view": "B",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "name"
+      ],
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "maintenance_cost",
+          "display_name": "maintenance_cost",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 90000000
+        },
+        {
+          "name": "equipment_requirements",
+          "display_name": "equipment_requirements",
+          "type": "jsonb_resources",
+          "required": true,
+          "subfield_mapping": "equip_counts",
+          "fk": {
+            "target_table": "equipments",
+            "target_column": "code_name"
+          }
+        },
+        {
+          "name": "description",
+          "display_name": "description",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    "provinces": {
+      "name": "provinces",
+      "group": "pg",
+      "display_name": "省份",
+      "layer": 2,
+      "view": "B",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "name",
+        "population"
+      ],
+      "columns": [
+        {
+          "name": "regime_id",
+          "display_name": "regime_id",
+          "type": "foreign_key",
+          "required": true,
+          "fk": {
+            "target_table": "regimes",
+            "target_column": "code_name"
+          }
+        },
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "population",
+          "display_name": "population",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000
+        },
+        {
+          "name": "public_sentiment",
+          "display_name": "public_sentiment",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "rebellion_risk",
+          "display_name": "rebellion_risk",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "yield_mu",
+          "display_name": "yield_mu",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 99.999
+        },
+        {
+          "name": "tax_rate",
+          "display_name": "tax_rate",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 99.999
+        },
+        {
+          "name": "other_tax",
+          "display_name": "other_tax",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000
+        },
+        {
+          "name": "disaster_status",
+          "display_name": "disaster_status",
+          "type": "varchar",
+          "required": false
+        },
+        {
+          "name": "disaster_level",
+          "display_name": "disaster_level",
+          "type": "varchar",
+          "required": false
+        },
+        {
+          "name": "defence_level",
+          "display_name": "defence_level",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 10
+        },
+        {
+          "name": "tax_efficiency",
+          "display_name": "tax_efficiency",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 99.999,
+          "advisoryMin": 0,
+          "advisoryMax": 1
+        },
+        {
+          "name": "is_coastal",
+          "display_name": "is_coastal",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "description",
+          "display_name": "description",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    "province_land_holdings": {
+      "name": "province_land_holdings",
+      "group": "pg",
+      "display_name": "省份土地",
+      "layer": 2,
+      "view": "A",
+      "primary_key": "code_name",
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "required": true,
+          "readonly": true
+        },
+        {
+          "name": "province_code",
+          "display_name": "province_code",
+          "type": "foreign_key",
+          "required": true,
+          "fk": {
+            "target_table": "provinces",
+            "target_column": "code_name"
+          }
+        },
+        {
+          "name": "land_type_code",
+          "display_name": "land_type_code",
+          "type": "foreign_key",
+          "required": true,
+          "fk": {
+            "target_table": "land_tax_configs",
+            "target_column": "code_name"
+          }
+        },
+        {
+          "name": "area_mu",
+          "display_name": "area_mu",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000
+        }
+      ]
+    },
+    "troops": {
+      "name": "troops",
+      "group": "pg",
+      "display_name": "军队",
+      "layer": 3,
+      "view": "B",
+      "primary_key": "code_name",
+      "columns": [
+        {
+          "name": "regime_id",
+          "display_name": "regime_id",
+          "type": "foreign_key",
+          "required": true,
+          "fk": {
+            "target_table": "regimes",
+            "target_column": "code_name"
+          }
+        },
+        {
+          "name": "location_province_id",
+          "display_name": "location_province_id",
+          "type": "foreign_key",
+          "required": true,
+          "fk": {
+            "target_table": "provinces",
+            "target_column": "code_name"
+          }
+        },
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "type",
+          "display_name": "type",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "exp",
+          "display_name": "exp",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "morale",
+          "display_name": "morale",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "loyalty",
+          "display_name": "loyalty",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "supply",
+          "display_name": "supply",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "composition",
+          "display_name": "composition",
+          "type": "jsonb_resources",
+          "required": true,
+          "subfield_mapping": "unit_composition",
+          "fk": {
+            "target_table": "arm_configs",
+            "target_column": "code_name"
+          },
+          "fk_navy": {
+            "target_table": "ship_configs",
+            "target_column": "code_name"
+          }
+        },
+        {
+          "name": "attached_personnel_count",
+          "display_name": "attached_personnel_count",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000
+        },
+        {
+          "name": "extra_cost",
+          "display_name": "extra_cost",
+          "type": "numeric",
+          "required": true,
+          "advisoryMin": 0,
+          "advisoryMax": 10
+        },
+        {
+          "name": "salary_rate",
+          "display_name": "salary_rate",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 999.99,
+          "advisoryMin": 0,
+          "advisoryMax": 1
+        }
+      ]
+    },
+    "finances": {
+      "name": "finances",
+      "group": "pg",
+      "display_name": "财政值",
+      "layer": 3,
+      "view": "D",
+      "primary_key": null,
+      "columns": [
+        {
+          "name": "current_turn",
+          "display_name": "current_turn",
+          "type": "int",
+          "required": true,
+          "readonly": true,
+          "default": 1
+        },
+        {
+          "name": "treasury",
+          "display_name": "treasury",
+          "type": "numeric",
+          "required": true,
+          "min": -9000000000000000,
+          "max": 9000000000000000
+        },
+        {
+          "name": "salt_tea_tax",
+          "display_name": "salt_tea_tax",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "transport_tax",
+          "display_name": "transport_tax",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "ore_tax",
+          "display_name": "ore_tax",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "other_treasury_income",
+          "display_name": "other_treasury_income",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "salary_cost",
+          "display_name": "salary_cost",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "official_salary",
+          "display_name": "official_salary",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "other_treasury_cost",
+          "display_name": "other_treasury_cost",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "privacy",
+          "display_name": "privacy",
+          "type": "numeric",
+          "required": true,
+          "min": -9000000000000000,
+          "max": 9000000000000000
+        },
+        {
+          "name": "trade_tax",
+          "display_name": "trade_tax",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "jinhua_tax",
+          "display_name": "jinhua_tax",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "imperial_work_income",
+          "display_name": "imperial_work_income",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "taipusi_silver_income",
+          "display_name": "taipusi_silver_income",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "other_privacy_income",
+          "display_name": "other_privacy_income",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "palace_cost",
+          "display_name": "palace_cost",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "guard_cost",
+          "display_name": "guard_cost",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "engineering_cost",
+          "display_name": "engineering_cost",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        },
+        {
+          "name": "other_privacy_cost",
+          "display_name": "other_privacy_cost",
+          "type": "numeric",
+          "required": true,
+          "min": 0,
+          "max": 9000000000000000
+        }
+      ]
+    },
+    "normal_events": {
+      "name": "normal_events",
+      "group": "mongo",
+      "display_name": "常规事件",
+      "layer": 4,
+      "view": "B",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "name",
+        "category"
+      ],
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "事件 ID",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "事件名称",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "description",
+          "display_name": "事件概述",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "effect_text",
+          "display_name": "事件影响",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "category",
+          "display_name": "事件大类",
+          "type": "enum",
+          "required": true,
+          "enum_values": [
+            "军事",
+            "管理",
+            "政治",
+            "学识"
+          ]
+        }
+      ]
+    },
+    "random_events": {
+      "name": "random_events",
+      "group": "mongo",
+      "display_name": "随机事件",
+      "layer": 4,
+      "view": "B",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "title"
+      ],
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "事件 key",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "title",
+          "display_name": "事件标题",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "description",
+          "display_name": "事件文本",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "cleaned_condition",
+          "display_name": "触发条件",
+          "type": "condition_list",
+          "required": false,
+          "group": "触发"
+        },
+        {
+          "name": "c1_content",
+          "display_name": "选项1 内容",
+          "type": "varchar",
+          "required": false,
+          "group": "选项 1"
+        },
+        {
+          "name": "c1_display",
+          "display_name": "选项1 展示",
+          "type": "text",
+          "required": false,
+          "group": "选项 1"
+        },
+        {
+          "name": "cleaned_c1_effect",
+          "display_name": "选项1 效果",
+          "type": "effect_list",
+          "required": false,
+          "group": "选项 1"
+        },
+        {
+          "name": "c2_content",
+          "display_name": "选项2 内容",
+          "type": "varchar",
+          "required": false,
+          "group": "选项 2"
+        },
+        {
+          "name": "c2_display",
+          "display_name": "选项2 展示",
+          "type": "text",
+          "required": false,
+          "group": "选项 2"
+        },
+        {
+          "name": "cleaned_c2_effect",
+          "display_name": "选项2 效果",
+          "type": "effect_list",
+          "required": false,
+          "group": "选项 2"
+        },
+        {
+          "name": "c3_content",
+          "display_name": "选项3 内容",
+          "type": "varchar",
+          "required": false,
+          "group": "选项 3"
+        },
+        {
+          "name": "c3_display",
+          "display_name": "选项3 展示",
+          "type": "text",
+          "required": false,
+          "group": "选项 3"
+        },
+        {
+          "name": "cleaned_c3_effect",
+          "display_name": "选项3 效果",
+          "type": "effect_list",
+          "required": false,
+          "group": "选项 3"
+        }
+      ]
+    },
+    "fixed_turn_events": {
+      "name": "fixed_turn_events",
+      "group": "mongo",
+      "display_name": "固定回合事件",
+      "layer": 4,
+      "view": "B",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "title"
+      ],
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "事件 key",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "title",
+          "display_name": "事件标题",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "description",
+          "display_name": "事件文本",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "cleaned_condition",
+          "display_name": "触发条件",
+          "type": "condition_list",
+          "required": false,
+          "group": "触发"
+        },
+        {
+          "name": "c1_content",
+          "display_name": "选项1 内容",
+          "type": "varchar",
+          "required": false,
+          "group": "选项 1"
+        },
+        {
+          "name": "c1_display",
+          "display_name": "选项1 展示",
+          "type": "text",
+          "required": false,
+          "group": "选项 1"
+        },
+        {
+          "name": "cleaned_c1_effect",
+          "display_name": "选项1 效果",
+          "type": "effect_list",
+          "required": false,
+          "group": "选项 1"
+        },
+        {
+          "name": "c2_content",
+          "display_name": "选项2 内容",
+          "type": "varchar",
+          "required": false,
+          "group": "选项 2"
+        },
+        {
+          "name": "c2_display",
+          "display_name": "选项2 展示",
+          "type": "text",
+          "required": false,
+          "group": "选项 2"
+        },
+        {
+          "name": "cleaned_c2_effect",
+          "display_name": "选项2 效果",
+          "type": "effect_list",
+          "required": false,
+          "group": "选项 2"
+        },
+        {
+          "name": "c3_content",
+          "display_name": "选项3 内容",
+          "type": "varchar",
+          "required": false,
+          "group": "选项 3"
+        },
+        {
+          "name": "c3_display",
+          "display_name": "选项3 展示",
+          "type": "text",
+          "required": false,
+          "group": "选项 3"
+        },
+        {
+          "name": "cleaned_c3_effect",
+          "display_name": "选项3 效果",
+          "type": "effect_list",
+          "required": false,
+          "group": "选项 3"
+        }
+      ]
+    },
+    "game_state_rules": {
+      "name": "game_state_rules",
+      "group": "mongo",
+      "display_name": "信息感知",
+      "layer": 4,
+      "view": "B",
+      "primary_key": null,
+      "list_columns": [
+        "title",
+        "category",
+        "mode"
+      ],
+      "columns": [
+        {
+          "name": "title",
+          "display_name": "规则标题",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "category",
+          "display_name": "输出通道",
+          "type": "enum",
+          "required": true,
+          "enum_values": [
+            "game_state",
+            "special_simulation"
+          ],
+          "default": "game_state"
+        },
+        {
+          "name": "mode",
+          "display_name": "适用难度",
+          "type": "varchar",
+          "required": true,
+          "default": "all",
+          "subfield_mapping": "difficulty_set"
+        },
+        {
+          "name": "cleaned_condition",
+          "display_name": "触发条件",
+          "type": "condition_list",
+          "required": false
+        },
+        {
+          "name": "content",
+          "display_name": "输出内容",
+          "type": "text",
+          "required": false,
+          "subfield_mapping": "gsr_content"
+        }
+      ]
+    },
+    "random_events_chain": {
+      "name": "random_events_chain",
+      "group": "mongo",
+      "display_name": "链式随机事件",
+      "layer": 4,
+      "view": "E",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "title"
+      ],
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "事件 key",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "title",
+          "display_name": "事件标题",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "description",
+          "display_name": "事件文本",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "cleaned_condition",
+          "display_name": "触发条件",
+          "type": "condition_list",
+          "required": false,
+          "group": "触发"
+        },
+        {
+          "name": "c1_content",
+          "display_name": "选项1 内容",
+          "type": "varchar",
+          "required": false,
+          "group": "选项 1"
+        },
+        {
+          "name": "c1_display",
+          "display_name": "选项1 展示",
+          "type": "text",
+          "required": false,
+          "group": "选项 1"
+        },
+        {
+          "name": "cleaned_c1_effect",
+          "display_name": "选项1 效果",
+          "type": "effect_list",
+          "required": false,
+          "group": "选项 1"
+        },
+        {
+          "name": "c2_content",
+          "display_name": "选项2 内容",
+          "type": "varchar",
+          "required": false,
+          "group": "选项 2"
+        },
+        {
+          "name": "c2_display",
+          "display_name": "选项2 展示",
+          "type": "text",
+          "required": false,
+          "group": "选项 2"
+        },
+        {
+          "name": "cleaned_c2_effect",
+          "display_name": "选项2 效果",
+          "type": "effect_list",
+          "required": false,
+          "group": "选项 2"
+        },
+        {
+          "name": "c3_content",
+          "display_name": "选项3 内容",
+          "type": "varchar",
+          "required": false,
+          "group": "选项 3"
+        },
+        {
+          "name": "c3_display",
+          "display_name": "选项3 展示",
+          "type": "text",
+          "required": false,
+          "group": "选项 3"
+        },
+        {
+          "name": "cleaned_c3_effect",
+          "display_name": "选项3 效果",
+          "type": "effect_list",
+          "required": false,
+          "group": "选项 3"
+        }
+      ]
+    },
+    "super_events": {
+      "name": "super_events",
+      "group": "global",
+      "display_name": "超事件",
+      "layer": 4,
+      "view": "B",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "title"
+      ],
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "事件 ID",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "title",
+          "display_name": "标题",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "description",
+          "display_name": "描述",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "cleaned_condition",
+          "display_name": "结构化条件",
+          "type": "condition_list",
+          "required": true
+        }
+      ]
+    },
+    "decisions": {
+      "name": "decisions",
+      "group": "mongo",
+      "display_name": "决议事件",
+      "layer": 4,
+      "view": "B",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "title",
+        "category",
+        "sort_order"
+      ],
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "决议 ID",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "category",
+          "display_name": "分类",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "title",
+          "display_name": "标题",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "description",
+          "display_name": "决议描述",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "sort_order",
+          "display_name": "排序值",
+          "type": "int",
+          "required": true,
+          "default": 0
+        },
+        {
+          "name": "visibility_conditions",
+          "display_name": "可见条件",
+          "type": "json_value",
+          "subfield_mapping": "decision_conditions",
+          "required": true,
+          "group": "条件与规则"
+        },
+        {
+          "name": "execution_conditions",
+          "display_name": "执行条件",
+          "type": "json_value",
+          "subfield_mapping": "decision_conditions",
+          "required": true,
+          "group": "条件与规则"
+        },
+        {
+          "name": "repeat_policy",
+          "display_name": "重复执行规则",
+          "type": "json_value",
+          "subfield_mapping": "decision_repeat_policy",
+          "required": true,
+          "default": {
+            "type": "once"
+          },
+          "group": "条件与规则"
+        },
+        {
+          "name": "database_effects",
+          "display_name": "数据库效果",
+          "type": "effect_list",
+          "required": true,
+          "default": [],
+          "group": "条件与效果"
+        },
+        {
+          "name": "effect_display",
+          "display_name": "效果展示",
+          "type": "string_list",
+          "required": true,
+          "default": [],
+          "group": "条件与效果"
+        },
+        {
+          "name": "condition_display",
+          "display_name": "条件展示",
+          "type": "string_list",
+          "required": true,
+          "default": [],
+          "group": "条件与效果"
+        },
+        {
+          "name": "short_term_prompt",
+          "display_name": "短期提示词",
+          "type": "text",
+          "required": true,
+          "group": "提示词与联动"
+        },
+        {
+          "name": "long_term_prompt",
+          "display_name": "长期提示词",
+          "type": "text",
+          "required": true,
+          "group": "提示词与联动"
+        },
+        {
+          "name": "super_event",
+          "display_name": "执行后超事件",
+          "type": "json_value",
+          "subfield_mapping": "decision_super_event",
+          "required": false,
+          "group": "提示词与联动"
+        }
+      ]
+    },
+    "perks_table": {
+      "name": "perks_table",
+      "group": "mongo",
+      "display_name": "国策树",
+      "layer": 4,
+      "view": "E",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "name"
+      ],
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "技能序号",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "category",
+          "display_name": "技能类别",
+          "type": "enum",
+          "required": true,
+          "enum_values": [
+            "管理",
+            "学识",
+            "军事",
+            "政治",
+            "随机开局"
+          ]
+        },
+        {
+          "name": "name",
+          "display_name": "技能名称",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "prerequisites",
+          "display_name": "前置技能",
+          "type": "varchar",
+          "required": false
+        },
+        {
+          "name": "main_prerequisite",
+          "display_name": "主前置技能",
+          "type": "varchar",
+          "required": false
+        },
+        {
+          "name": "mutually_skill",
+          "display_name": "互斥国策",
+          "type": "varchar",
+          "required": false
+        },
+        {
+          "name": "description",
+          "display_name": "技能描述",
+          "type": "text",
+          "required": false
+        },
+        {
+          "name": "current_turn_effect",
+          "display_name": "本回合效果",
+          "type": "effect_list",
+          "required": false,
+          "group": "效果"
+        },
+        {
+          "name": "effect_display",
+          "display_name": "效果展示",
+          "type": "text",
+          "required": false,
+          "group": "效果"
+        },
+        {
+          "name": "context_text",
+          "display_name": "上下文文本",
+          "type": "text",
+          "required": false,
+          "group": "效果"
+        },
+        {
+          "name": "long_term_prompt",
+          "display_name": "长期 prompt",
+          "type": "text",
+          "required": false,
+          "group": "长期"
+        }
+      ]
+    },
+    "special_simulations": {
+      "name": "special_simulations",
+      "group": "mongo",
+      "display_name": "特殊推演",
+      "layer": 0,
+      "view": "B",
+      "primary_key": null,
+      "list_columns": [
+        "turn_number",
+        "title"
+      ],
+      "columns": [
+        {
+          "name": "_id",
+          "display_name": "ID",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "turn_number",
+          "display_name": "回合数",
+          "type": "int",
+          "required": true
+        },
+        {
+          "name": "title",
+          "display_name": "标题",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "content",
+          "display_name": "内容",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "is_active",
+          "display_name": "是否启用",
+          "type": "boolean",
+          "required": true
+        }
+      ]
+    },
+    "recommend_ministers": {
+      "name": "recommend_ministers",
+      "group": "global",
+      "display_name": "举荐大臣",
+      "layer": 1,
+      "view": "B",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "name",
+        "position"
+      ],
+      "columns": [
+        {
+          "name": "party_id",
+          "display_name": "party_id",
+          "type": "foreign_key",
+          "required": true,
+          "fk": {
+            "target_table": "parties",
+            "target_column": "code_name"
+          }
+        },
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "position",
+          "display_name": "position",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "stance",
+          "display_name": "stance",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "prompt",
+          "display_name": "prompt",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "influence",
+          "display_name": "influence",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000,
+          "advisoryMin": 0,
+          "advisoryMax": 100
+        },
+        {
+          "name": "gender",
+          "display_name": "gender",
+          "type": "enum",
+          "required": true,
+          "enum_values": [
+            "male",
+            "female"
+          ],
+          "default": "male"
+        },
+        {
+          "name": "description",
+          "display_name": "description",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "is_visible",
+          "display_name": "is_visible",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "is_alive",
+          "display_name": "is_alive",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "is_system",
+          "display_name": "is_system",
+          "type": "boolean",
+          "required": true
+        }
+      ]
+    },
+    "recommend_base": {
+      "name": "recommend_base",
+      "group": "global",
+      "display_name": "举荐基础数据",
+      "layer": 2,
+      "view": "B",
+      "primary_key": "code_name",
+      "rows_locked": true,
+      "list_columns": [
+        "code_name",
+        "name",
+        "recommend_round"
+      ],
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "code_name",
+          "type": "foreign_key",
+          "required": true,
+          "readonly": true,
+          "fk": {
+            "target_table": "recommend_ministers",
+            "target_column": "code_name"
+          },
+          "fill_from_fk": [
+            {
+              "source_field": "name",
+              "target_field": "name"
+            }
+          ]
+        },
+        {
+          "name": "name",
+          "display_name": "name",
+          "type": "varchar",
+          "required": true,
+          "readonly": true
+        },
+        {
+          "name": "recommend_round",
+          "display_name": "recommend_round",
+          "type": "int",
+          "required": true
+        },
+        {
+          "name": "recommend_text",
+          "display_name": "recommend_text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "option_display",
+          "display_name": "option_display",
+          "type": "varchar",
+          "required": true
+        }
+      ]
+    },
+    "initial_tasks": {
+      "name": "initial_tasks",
+      "group": "mongo",
+      "display_name": "初始任务",
+      "layer": 0,
+      "view": "B",
+      "primary_key": "title",
+      "list_columns": [
+        "title"
+      ],
+      "columns": [
+        {
+          "name": "title",
+          "display_name": "任务标题",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "body",
+          "display_name": "正文描述",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "solution_summary",
+          "display_name": "验收条件",
+          "type": "text",
+          "required": true
+        }
+      ]
+    },
+    "events_prediction": {
+      "name": "events_prediction",
+      "group": "pg",
+      "display_name": "事件预测表",
+      "layer": 0,
+      "view": "B",
+      "primary_key": "code_name",
+      "list_columns": [
+        "code_name",
+        "predicted_occurrence_time",
+        "predicted_occurrence_turn"
+      ],
+      "columns": [
+        {
+          "name": "code_name",
+          "display_name": "事件 ID",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "predicted_occurrence_time",
+          "display_name": "预测发生时间",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "predicted_occurrence_turn",
+          "display_name": "预测发生回合",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 100000
+        },
+        {
+          "name": "content",
+          "display_name": "预测内容",
+          "type": "jsonb_resources",
+          "subfield_mapping": "event_prediction_content",
+          "required": true
+        }
+      ]
+    },
+    "player_attributes_init_table": {
+      "name": "player_attributes_init_table",
+      "group": "global",
+      "display_name": "玩家初始属性",
+      "layer": 0,
+      "view": "A",
+      "primary_key": "attr_id",
+      "rows_locked": true,
+      "list_columns": [
+        "attr_id",
+        "name",
+        "value"
+      ],
+      "columns": [
+        {
+          "name": "attr_id",
+          "display_name": "属性序号",
+          "type": "int",
+          "required": true,
+          "readonly": true
+        },
+        {
+          "name": "name",
+          "display_name": "属性名称",
+          "type": "varchar",
+          "required": true,
+          "readonly": true
+        },
+        {
+          "name": "value",
+          "display_name": "属性值",
+          "type": "int",
+          "required": true,
+          "min": 0,
+          "max": 1900000000
+        }
+      ]
+    }
+  },
+  "table_rules": {
+    "random_events": [
+      "event-key-unique"
+    ],
+    "fixed_turn_events": [
+      "fixed-turn-event",
+      "event-key-unique"
+    ],
+    "random_events_chain": [
+      "event-key-unique"
+    ],
+    "decisions": [
+      "decision-structure"
+    ],
+    "perks_table": [
+      "perk-relations"
+    ]
+  },
+  "derived_tables": {
+    "recommend": {
+      "group": "global",
+      "primary_key": "code_name",
+      "columns": [
+        {
+          "name": "code_name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "recommend_round",
+          "type": "int",
+          "required": true
+        },
+        {
+          "name": "recommend_text",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "option_display",
+          "type": "varchar",
+          "required": true
+        },
+        {
+          "name": "option_effect",
+          "type": "text",
+          "required": false
+        }
+      ]
+    },
+    "minister_assets": {
+      "group": "global",
+      "primary_key": "name",
+      "columns": [
+        {
+          "name": "name",
+          "type": "text",
+          "required": true
+        }
+      ]
+    }
+  }
+}

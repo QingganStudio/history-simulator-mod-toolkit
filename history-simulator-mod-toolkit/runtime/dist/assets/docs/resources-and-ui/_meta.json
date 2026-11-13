@@ -1,0 +1,18 @@
+[
+  { "type": "file", "name": "index", "label": "本篇导读" },
+  {
+    "type": "dir",
+    "name": "map-and-provinces",
+    "label": "第 10 章：地图与省份",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "images-and-assets",
+    "label": "第 11 章：图片和资源",
+    "collapsible": true,
+    "collapsed": false
+  },
+  { "type": "file", "name": "custom-css", "label": "第 12 章：修改游戏样式" }
+]
